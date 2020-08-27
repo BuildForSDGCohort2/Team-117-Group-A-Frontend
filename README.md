@@ -1,8 +1,6 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
-
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/54164127535545a6b1b0da77c29e1ad4)](https://app.codacy.com/gh/BuildForSDGCohort2/Team-117-Group-A-Frontend?utm_source=github.com&utm_medium=referral&utm_content=BuildForSDGCohort2/Team-117-Group-A-Frontend&utm_campaign=Badge_Grade_Settings)
 
 In the project directory, you can run:
 
