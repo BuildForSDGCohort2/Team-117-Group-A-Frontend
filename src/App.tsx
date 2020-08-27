@@ -1,6 +1,6 @@
 import React from 'react'
 
-import LogonPage from './pages'
+import { LogonPage } from './pages'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './assets/css/global.css'
