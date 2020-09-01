@@ -1,0 +1,16 @@
+.logon {
+    background-color: grey;
+    height: 100%;
+}
+
+/* Temp styling - To be updated when the home page are done */
+ul {
+    display: flex;
+    list-style: none;
+}
+li {
+    margin: 5px;
+    padding: 3px;
+    border: 1px #ff0000 solid;
+    border-radius: 5px;
+}

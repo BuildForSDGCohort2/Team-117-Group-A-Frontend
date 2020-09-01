@@ -2,22 +2,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 350px;
 }
 
 .loginForm input[type='submit'].btn-block {
     width: 50%;
     margin: 10px auto;
 }
-.form {
-    height: 250px;
-    margin: auto;
-    margin-top: 15%;
+.loginForm .form-control {
     width: 300px;
+    margin: auto;
 }
 form > * {
     margin: 0 35px;
-}
-.light {
-    font-weight: 100;
 }

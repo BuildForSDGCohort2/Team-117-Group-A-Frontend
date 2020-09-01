@@ -52,12 +52,10 @@ const SignUpPage = () => {
                 body: JSON.stringify(body),
             })
             window.location = '/'
-            console.log(response)
         } catch (err) {
             console.error(err.message)
         }
     }
-
     return (
         <div>
             <SignupForm
@@ -68,12 +66,12 @@ const SignUpPage = () => {
                 handleChangePassword={handleChangePassword}
                 handleChangePasswordConfirmation={handleChangePasswordConfirmation}
                 onSubmitForm={onSubmitForm}
-                firstName={first_name}
-                lastName={last_name}
+                firstname={first_name}
+                lastname={last_name}
                 email={email}
                 phone={phone}
                 password={password}
-                passwordConfirmation={password_confirmation}
+                passwordconfirmation={password_confirmation}
             />
         </div>
     )

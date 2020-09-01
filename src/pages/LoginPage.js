@@ -1,9 +1,12 @@
 import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 
 import LoginForm from '../components/LoginForm/LoginForm'
 
 const LoginPage = () => {
     const [formState, setFormState] = useState({})
+    const [error, setError] = useState('')
+    const history = useHistory()
 
     const handleChange = event => {
         const { name, value } = event.target
@@ -22,15 +25,27 @@ const LoginPage = () => {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(body),
             })
-            console.log(response)
+            const { status, statusText } = response
+            if (status >= 400) {
+                setError(statusText)
+            } else {
+                history.push('/')
+            }
         } catch (err) {
+            setError(err.message)
             console.error(err.message)
         }
     }
     const { email, password } = formState
     return (
         <div>
-            <LoginForm handleChange={handleChange} onSubmitForm={onSubmitForm} email={email} password={password} />
+            <LoginForm
+                handleChange={handleChange}
+                onSubmitForm={onSubmitForm}
+                email={email}
+                password={password}
+                error={error}
+            />
         </div>
     )
 }

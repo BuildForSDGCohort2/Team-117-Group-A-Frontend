@@ -2,11 +2,11 @@ import React from 'react'
 
 import './LoginForm.css'
 
-const LoginForm = ({ email, password, handleChange, onSubmitForm }) => {
+const LoginForm = ({ email, password, handleChange, onSubmitForm, error }) => {
     return (
         <div className="container loginForm">
             <div className="row centered-form">
-                <div className="col-xs-12 col-sm-8 col-md-4">
+                <div className="col-xs-12">
                     <div className="panel panel-default form">
                         <div className="panel-heading">
                             <h3 className="panel-title text-center">Login</h3>
@@ -14,13 +14,13 @@ const LoginForm = ({ email, password, handleChange, onSubmitForm }) => {
                         <div className="panel-body">
                             <form>
                                 <div className="row">
-                                    <div className="col-xs-12 col-sm-12 col-md-12">
+                                    <div className="col-xs-12 col-sm-12">
                                         <div className="form-group">
                                             <input
                                                 type="email"
                                                 name="email"
                                                 id="email"
-                                                className="form-control input-sm"
+                                                className="form-control  form"
                                                 placeholder="Email"
                                                 onChange={handleChange}
                                                 email={email}
@@ -29,7 +29,8 @@ const LoginForm = ({ email, password, handleChange, onSubmitForm }) => {
                                     </div>
                                 </div>
                                 <div className="row">
-                                    <div className="col-xs-12 col-sm-12 col-md-12">
+                                    <div className="col-xs-12 col-sm-12">
+                                        <p className="text-danger">{error && `Login Failed user: ${error}`}</p>
                                         <div className="form-group">
                                             <input
                                                 type="password"
@@ -46,8 +47,7 @@ const LoginForm = ({ email, password, handleChange, onSubmitForm }) => {
                                 <input
                                     type="submit"
                                     value="Login"
-                                    size="sm"
-                                    className="btn btn-danger btn-block"
+                                    className="btn btn-danger btn-block align-center"
                                     onClick={onSubmitForm}
                                 />
                             </form>
