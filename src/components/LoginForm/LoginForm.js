@@ -4,12 +4,12 @@ import './LoginForm.css'
 
 const LoginForm = ({ email, password, handleChange, onSubmitForm }) => {
     return (
-        <div className="container body">
+        <div className="container loginForm">
             <div className="row centered-form">
-                <div className="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
-                    <div className="panel panel-default">
+                <div className="col-xs-12 col-sm-8 col-md-4">
+                    <div className="panel panel-default form">
                         <div className="panel-heading">
-                            <h3 className="panel-title">Login</h3>
+                            <h3 className="panel-title text-center">Login</h3>
                         </div>
                         <div className="panel-body">
                             <form>
@@ -35,7 +35,7 @@ const LoginForm = ({ email, password, handleChange, onSubmitForm }) => {
                                                 type="password"
                                                 name="password"
                                                 id="password"
-                                                className="form-control input-sm"
+                                                className="form-control"
                                                 placeholder="Password"
                                                 onChange={handleChange}
                                                 password={password}
@@ -46,7 +46,8 @@ const LoginForm = ({ email, password, handleChange, onSubmitForm }) => {
                                 <input
                                     type="submit"
                                     value="Login"
-                                    className="btn btn-info btn-block"
+                                    size="sm"
+                                    className="btn btn-danger btn-block"
                                     onClick={onSubmitForm}
                                 />
                             </form>

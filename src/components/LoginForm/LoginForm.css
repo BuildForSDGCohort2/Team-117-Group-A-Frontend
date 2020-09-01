@@ -1,24 +1,23 @@
-.logonForm {
+.loginForm {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 350px;
 }
 
-.logonForm button {
-    display: block;
+.loginForm input[type='submit'].btn-block {
+    width: 50%;
+    margin: 10px auto;
 }
 .form {
-    max-width: 200px;
-    height: 200px;
+    height: 250px;
     margin: auto;
     margin-top: 15%;
+    width: 300px;
+}
+form > * {
+    margin: 0 35px;
 }
 .light {
     font-weight: 100;
-}
-
-@media only screen and (min-width: 600px) {
-    .form {
-        max-width: 350px;
-    }
 }
