@@ -23,7 +23,7 @@ const SignupForm = ({
                 <div className="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
                     <div className="panel panel-default">
                         <div className="panel-heading">
-                            <h3 className="panel-title">Signup for .......</h3>
+                            <h3 className="panel-title">Signup</h3>
                         </div>
                         <div className="panel-body">
                             <form>
