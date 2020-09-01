@@ -57,14 +57,6 @@ const SignUpPage = () => {
             console.error(err.message)
         }
     }
-
-    console.log('first_name', first_name)
-    console.log('last_name', last_name)
-    console.log('email', email)
-    console.log('phone', phone)
-    console.log('password', password)
-    console.log('password_confirmation', password_confirmation)
-
     return (
         <div>
             <SignupForm
@@ -75,26 +67,15 @@ const SignUpPage = () => {
                 handleChangePassword={handleChangePassword}
                 handleChangePasswordConfirmation={handleChangePasswordConfirmation}
                 onSubmitForm={onSubmitForm}
-                firstName={first_name}
-                lastName={last_name}
+                firstname={first_name}
+                lastname={last_name}
                 email={email}
                 phone={phone}
                 password={password}
-                passwordConfirmation={password_confirmation}
+                passwordconfirmation={password_confirmation}
             />
         </div>
     )
 }
 
 export default SignUpPage
-
-// User Signup
-// http://moboclinic.herokuapp.com/api/register
-
-// {
-// 	"first_name": "segun",
-// 	"last_name": "aka",
-// 	"email": "segun@test.com",
-// 	"phone": "080123456887",
-// 	"password": "testing"
-// }

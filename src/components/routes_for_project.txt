@@ -1,0 +1,25 @@
+//Below is routes that can be copied for use in this projec.
+// This page is to be deleted as soon as it is not needed anymore.
+
+// The index page is updated to make use of the routes.
+
+//Linking page to the route.
+
+  <Link to="/">Home</Link>
+  <Link to="/about">About</Link>
+  <Link to="/contacts">Contacts</Link>
+
+// Use switch only once per page
+// Switch/Route combination to be used on the page and place where to display.
+        
+  <Switch>
+    <Route exact path="/">
+      <Home />
+    </Route>
+    <Route path="/about">
+      <About />
+    </Route>
+    <Route path="/contacts">
+      <Contacts />
+    </Route>
+  </Switch>

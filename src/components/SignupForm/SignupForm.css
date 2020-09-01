@@ -1,16 +1,29 @@
 .body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    background: #c4c4c4;
+    border-radius: 10px;
     margin: 60px;
-    padding: 30px;
-}
-.centered-form {
-    margin-top: 60px;
+    padding: 60px;
+    color: red;
 }
 
-.centered-form .panel {
-    background: rgba(255, 255, 255, 0.8);
-    box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
+form input {
+    margin: 10px;
+    padding: 10px;
 }
 
-.form-group {
-    margin: 5px;
+form {
+    width: 40%;
+}
+
+input.button {
+    color: red;
+    display: block;
+    background: #826b6b;
+    border-radius: 10px;
+    border: 1px #fff solid;
+    width: 50%;
 }
