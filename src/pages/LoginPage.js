@@ -25,14 +25,14 @@ const LoginPage = () => {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(body),
             })
-            const { status, statusText } = response
+            const { status } = response
             if (status >= 400) {
-                setError(statusText)
+                setError('User not found')
             } else {
                 history.push('/')
             }
         } catch (err) {
-            setError(err.message)
+            setError('User not found')
             console.error(err.message)
         }
     }

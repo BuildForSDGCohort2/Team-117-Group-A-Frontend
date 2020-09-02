@@ -30,7 +30,7 @@ const LoginForm = ({ email, password, handleChange, onSubmitForm, error }) => {
                                 </div>
                                 <div className="row">
                                     <div className="col-xs-12 col-sm-12">
-                                        <p className="text-danger">{error && `Login Failed user: ${error}`}</p>
+                                        <p className="text-danger">{error}</p>
                                         <div className="form-group">
                                             <input
                                                 type="password"

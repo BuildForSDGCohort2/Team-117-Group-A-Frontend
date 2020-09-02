@@ -1,0 +1,8 @@
+a {
+    display: flex;
+    list-style: none;
+    margin: 5px;
+    padding: 3px;
+    border: 1px grey solid;
+    border-radius: 5px;
+}
