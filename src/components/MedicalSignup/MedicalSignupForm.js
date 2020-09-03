@@ -1,6 +1,14 @@
 import React from 'react'
 
-const MedicalSignupForm = () => {
+const MedicalSignupForm = ({
+    handleChange,
+    companyname,
+    address,
+    companyemail,
+    phonenumber,
+    password,
+    passwordconfirmation,
+}) => {
     return (
         <div className=" body">
             <h3>Register as a MoboClinic user</h3>
@@ -8,9 +16,11 @@ const MedicalSignupForm = () => {
                 <input
                     type="text"
                     name="company_name"
-                    id="fcompany_name"
+                    id="company_name"
                     className="form-control input-sm"
                     placeholder="Company Name"
+                    onChange={handleChange}
+                    companyname={companyname}
                 />
                 <input
                     type="text"
@@ -18,6 +28,8 @@ const MedicalSignupForm = () => {
                     id="address"
                     className="form-control input-sm"
                     placeholder="Address"
+                    onChange={handleChange}
+                    address={address}
                 />
                 <input
                     type="email"
@@ -25,6 +37,8 @@ const MedicalSignupForm = () => {
                     id="emcompany_emailail"
                     className="form-control input-sm"
                     placeholder="Company Email"
+                    onChange={handleChange}
+                    companyemail={companyemail}
                 />
                 <input
                     type="tel"
@@ -32,6 +46,8 @@ const MedicalSignupForm = () => {
                     id="phone_number"
                     className="form-control input-sm"
                     placeholder="Phone Number"
+                    onChange={handleChange}
+                    phonenumber={phonenumber}
                 />
                 <input
                     type="password"
@@ -39,6 +55,8 @@ const MedicalSignupForm = () => {
                     id="password"
                     className="form-control input-sm"
                     placeholder="Password"
+                    onChange={handleChange}
+                    password={password}
                 />
                 <input
                     type="password"
@@ -46,6 +64,8 @@ const MedicalSignupForm = () => {
                     id="password_confirmation"
                     className="form-control input-sm"
                     placeholder="Confirm Password"
+                    onChange={handleChange}
+                    passwordconfirmation={passwordconfirmation}
                 />
                 <input type="submit" value="Register" className="btn-block button" />
             </form>

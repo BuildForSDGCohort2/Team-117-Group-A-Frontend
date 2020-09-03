@@ -1,9 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import MedicalSignupForm from '../components/MedicalSignup/MedicalSignupForm'
 
 const MedicalSignupPage = () => {
-    return <MedicalSignupForm />
+    const [formState, setFormState] = useState({})
+
+    const handleChange = event => {
+        const { name, value } = event.target
+        setFormState({
+            ...formState,
+            [name]: value,
+        })
+    }
+
+    const { company_name, address, company_email, phone_number, password, password_confirmation } = formState
+
+    return (
+        <MedicalSignupForm
+            handleChange={handleChange}
+            companyname={company_name}
+            address={address}
+            companyemail={company_email}
+            phonevumber={phone_number}
+            password={password}
+            passwordconfirmation={password_confirmation}
+        />
+    )
 }
 
 export default MedicalSignupPage

@@ -3,19 +3,14 @@ import React from 'react'
 import './SignupForm.css'
 
 const SignupForm = ({
-    handleChangeFirsName,
     firstname,
-    handleChangeLastName,
     lastname,
-    handleChangeEmail,
     email,
-    handleChangePhone,
     phone,
-    handleChangePassword,
     password,
-    handleChangePasswordConfirmation,
     passwordconfirmation,
     onSubmitForm,
+    handleChange,
 }) => {
     return (
         <div className=" body">
@@ -27,7 +22,7 @@ const SignupForm = ({
                     id="first_name"
                     className="form-control input-sm"
                     placeholder="First Name"
-                    onChange={handleChangeFirsName}
+                    onChange={handleChange}
                     firstname={firstname}
                 />
                 <input
@@ -36,7 +31,7 @@ const SignupForm = ({
                     id="last_name"
                     className="form-control input-sm"
                     placeholder="Last Name"
-                    onChange={handleChangeLastName}
+                    onChange={handleChange}
                     lastname={lastname}
                 />
                 <input
@@ -45,7 +40,7 @@ const SignupForm = ({
                     id="phone"
                     className="form-control input-sm"
                     placeholder="Phone Number"
-                    onChange={handleChangePhone}
+                    onChange={handleChange}
                     phone={phone}
                 />
                 <input
@@ -54,7 +49,7 @@ const SignupForm = ({
                     id="email"
                     className="form-control input-sm"
                     placeholder="Email Adress"
-                    onChange={handleChangeEmail}
+                    onChange={handleChange}
                     email={email}
                 />
                 <input
@@ -63,7 +58,7 @@ const SignupForm = ({
                     id="password"
                     className="form-control input-sm"
                     placeholder="Password"
-                    onChange={handleChangePassword}
+                    onChange={handleChange}
                     password={password}
                 />
                 <input
@@ -72,7 +67,7 @@ const SignupForm = ({
                     id="password_confirmation"
                     className="form-control input-sm"
                     placeholder="Confirm Password"
-                    onChange={handleChangePasswordConfirmation}
+                    onChange={handleChange}
                     passwordconfirmation={passwordconfirmation}
                 />
                 <input type="submit" value="Register" className="btn-block button" onClick={onSubmitForm} />
