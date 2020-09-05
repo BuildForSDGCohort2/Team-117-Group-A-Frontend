@@ -5,9 +5,9 @@ import LoginForm from '../components/LoginForm/LoginForm'
 
 const LoginPage = () => {
     const { handleLogin } = useContext(AppContext)
-    const [formState, setFormState] = useState({})
+    const [formState, setFormState] = useState({ username: '', password: '' })
 
-    const { email, password } = formState
+    const { username, password } = formState
 
     const handleChange = event => {
         const { name, value } = event.target
@@ -17,14 +17,19 @@ const LoginPage = () => {
         })
     }
 
-    const onSubmitForm = e => {
+    const onSubmitForm = async e => {
         e.preventDefault()
-        handleLogin({ email, password })
+        await handleLogin(username, password)
     }
 
     return (
         <div>
-            <LoginForm handleChange={handleChange} onSubmitForm={onSubmitForm} email={email} password={password} />
+            <LoginForm
+                handleChange={handleChange}
+                onSubmitForm={onSubmitForm}
+                username={username}
+                password={password}
+            />
         </div>
     )
 }

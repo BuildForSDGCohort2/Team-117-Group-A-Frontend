@@ -1,22 +1,17 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext } from 'react'
 import { login } from '../services/auth'
 
 const AppContext = createContext()
 
 const AppProvider = props => {
-    const [currentUser, setCurrentUser] = useState({})
-
-    const handleLogin = async ({ email, password }) => {
-        const userData = await login({ email, password })
-        console.log(userData)
-        localStorage.setItem('user', userData)
-        setCurrentUser(userData)
+    const handleLogin = async (username, password) => {
+        const userData = await login(username, password)
+        localStorage.setItem('user', JSON.stringify(userData))
     }
 
     return (
         <AppContext.Provider
             value={{
-                currentUser,
                 handleLogin,
             }}
         >

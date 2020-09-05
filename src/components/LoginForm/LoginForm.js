@@ -2,7 +2,7 @@ import React from 'react'
 
 import './LoginForm.css'
 
-const LoginForm = ({ email, password, handleChange, onSubmitForm, error }) => {
+const LoginForm = ({ username, password, handleChange, onSubmitForm, error }) => {
     return (
         <div className="container loginForm">
             <div className="row centered-form">
@@ -17,13 +17,13 @@ const LoginForm = ({ email, password, handleChange, onSubmitForm, error }) => {
                                     <div className="col-xs-12 col-sm-12">
                                         <div className="form-group">
                                             <input
-                                                type="email"
-                                                name="email"
-                                                id="email"
+                                                type="username"
+                                                name="username"
+                                                id="username"
                                                 className="form-control  form"
-                                                placeholder="Email"
+                                                placeholder="username"
                                                 onChange={handleChange}
-                                                email={email}
+                                                username={username}
                                             />
                                         </div>
                                     </div>
