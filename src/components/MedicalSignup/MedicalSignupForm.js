@@ -2,6 +2,7 @@ import React from 'react'
 
 const MedicalSignupForm = ({
     handleChange,
+    onSubmitForm,
     companyname,
     address,
     companyemail,
@@ -15,8 +16,8 @@ const MedicalSignupForm = ({
             <form>
                 <input
                     type="text"
-                    name="company_name"
-                    id="company_name"
+                    name="name"
+                    id="name"
                     className="form-control input-sm"
                     placeholder="Company Name"
                     onChange={handleChange}
@@ -33,8 +34,8 @@ const MedicalSignupForm = ({
                 />
                 <input
                     type="email"
-                    name="company_email"
-                    id="emcompany_emailail"
+                    name="email"
+                    id="email"
                     className="form-control input-sm"
                     placeholder="Company Email"
                     onChange={handleChange}
@@ -42,8 +43,8 @@ const MedicalSignupForm = ({
                 />
                 <input
                     type="tel"
-                    name="phone_number"
-                    id="phone_number"
+                    name="phone"
+                    id="phone"
                     className="form-control input-sm"
                     placeholder="Phone Number"
                     onChange={handleChange}
@@ -67,7 +68,7 @@ const MedicalSignupForm = ({
                     onChange={handleChange}
                     passwordconfirmation={passwordconfirmation}
                 />
-                <input type="submit" value="Register" className="btn-block button" />
+                <input type="submit" value="Register" className="btn-block button" onClick={onSubmitForm} />
             </form>
         </div>
     )

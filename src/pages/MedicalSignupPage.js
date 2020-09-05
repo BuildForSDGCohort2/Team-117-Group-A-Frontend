@@ -13,15 +13,38 @@ const MedicalSignupPage = () => {
         })
     }
 
-    const { company_name, address, company_email, phone_number, password, password_confirmation } = formState
+    const { name, address, email, phone, password, password_confirmation } = formState
+
+    console.log('name', name)
+    console.log('address', address)
+    console.log('email', email)
+    console.log('phone', phone)
+    console.log('password', password)
+    console.log('password_confirmation', password_confirmation)
+
+    const onSubmitForm = e => {
+        e.preventDefault()
+        try {
+            const body = { name, address, email, phone, password }
+            const response = fetch('http://moboclinic.herokuapp.com/api/register', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(body),
+            })
+            window.location = '/'
+        } catch (err) {
+            console.error(err.message)
+        }
+    }
 
     return (
         <MedicalSignupForm
             handleChange={handleChange}
-            companyname={company_name}
+            onSubmitForm={onSubmitForm}
+            companyname={name}
             address={address}
-            companyemail={company_email}
-            phonevumber={phone_number}
+            companyemail={email}
+            phonenumber={phone}
             password={password}
             passwordconfirmation={password_confirmation}
         />
