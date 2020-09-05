@@ -16,9 +16,9 @@ const HeaderBar = () => {
                     {user?.id ? <Link to="/">MoboClinic</Link> : <Link to="/login">MoboClinic</Link>}
                 </Navbar.Brand>
                 <Nav className="mr-auto"></Nav>
-                {!user?.id && <Link to="/sign-up">Signup</Link>}
                 <Link to="/medical-signup">Medical Signup</Link>
-                {user?.id && <Link onClick={handleLogOut}>Logout</Link>}
+                {user?.id ? null : <Link to="/sign-up">Signup</Link>}
+                {user?.id ? <Link onClick={handleLogOut}>Logout</Link> : null}
             </Navbar>
         </div>
     )
