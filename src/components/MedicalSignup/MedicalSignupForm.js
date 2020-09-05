@@ -1,16 +1,13 @@
 import React from 'react'
 
-import './SignupForm.css'
-
-const SignupForm = ({
-    firstname,
-    lastname,
-    email,
-    phone,
+const MedicalSignupForm = ({
+    handleChange,
+    companyname,
+    address,
+    companyemail,
+    phonenumber,
     password,
     passwordconfirmation,
-    onSubmitForm,
-    handleChange,
 }) => {
     return (
         <div className=" body">
@@ -18,39 +15,39 @@ const SignupForm = ({
             <form>
                 <input
                     type="text"
-                    name="first_name"
-                    id="first_name"
+                    name="company_name"
+                    id="company_name"
                     className="form-control input-sm"
-                    placeholder="First Name"
+                    placeholder="Company Name"
                     onChange={handleChange}
-                    firstname={firstname}
+                    companyname={companyname}
                 />
                 <input
                     type="text"
-                    name="last_name"
-                    id="last_name"
+                    name="address"
+                    id="address"
                     className="form-control input-sm"
-                    placeholder="Last Name"
+                    placeholder="Address"
                     onChange={handleChange}
-                    lastname={lastname}
-                />
-                <input
-                    type="tel"
-                    name="phone"
-                    id="phone"
-                    className="form-control input-sm"
-                    placeholder="Phone Number"
-                    onChange={handleChange}
-                    phone={phone}
+                    address={address}
                 />
                 <input
                     type="email"
-                    name="email"
-                    id="email"
+                    name="company_email"
+                    id="emcompany_emailail"
                     className="form-control input-sm"
-                    placeholder="Email Adress"
+                    placeholder="Company Email"
                     onChange={handleChange}
-                    email={email}
+                    companyemail={companyemail}
+                />
+                <input
+                    type="tel"
+                    name="phone_number"
+                    id="phone_number"
+                    className="form-control input-sm"
+                    placeholder="Phone Number"
+                    onChange={handleChange}
+                    phonenumber={phonenumber}
                 />
                 <input
                     type="password"
@@ -70,10 +67,10 @@ const SignupForm = ({
                     onChange={handleChange}
                     passwordconfirmation={passwordconfirmation}
                 />
-                <input type="submit" value="Register" className="btn-block button" onClick={onSubmitForm} />
+                <input type="submit" value="Register" className="btn-block button" />
             </form>
         </div>
     )
 }
 
-export default SignupForm
+export default MedicalSignupForm

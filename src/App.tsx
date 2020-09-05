@@ -1,8 +1,9 @@
 import React from 'react'
-import { Link, Switch, Route } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 
 import { LogonPage } from './pages'
 import SignupPage from './pages/SignUpPage'
+import MedicalSignupPage from './pages/MedicalSignupPage'
 import TempHomePage from './pages/TempHomePage'
 import HeaderBar from './components/NavBar/NavBar'
 
@@ -23,6 +24,9 @@ function App() {
                 </Route>
                 <Route path="/SignupPage">
                     <SignupPage />
+                </Route>
+                <Route path="/MedicalSignupPage">
+                    <MedicalSignupPage />
                 </Route>
             </Switch>
         </div>

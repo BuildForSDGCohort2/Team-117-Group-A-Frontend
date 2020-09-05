@@ -4,49 +4,29 @@ import SignupForm from '../components/SignupForm/SignupForm'
 
 const SignUpPage = () => {
     // Form state
-    const [first_name, setFirsName] = useState('')
-    const [last_name, setLastName] = useState('')
-    const [email, setEmail] = useState('')
-    const [phone, setPhone] = useState('')
-    const [password, setPassword] = useState('')
-    const [password_confirmation, setPasswordConformation] = useState('')
+    const [formState, setFormState] = useState({})
 
     //handel change of input for the form
-    const handleChangeFirsName = event => {
+    const handleChange = event => {
         const { name, value } = event.target
-        setFirsName({ [name]: value })
+        setFormState({
+            ...formState,
+            [name]: value,
+        })
     }
+    const { first_name, last_name, email, phone, password, password_confirmation } = formState
+    console.log('first_name ', first_name)
+    console.log('last_name ', last_name)
+    console.log('email ', email)
+    console.log('phone ', phone)
+    console.log(' password', password)
+    console.log('password_confirmation ', password_confirmation)
 
-    const handleChangeLastName = event => {
-        const { name, value } = event.target
-        setLastName({ [name]: value })
-    }
-
-    const handleChangeEmail = event => {
-        const { name, value } = event.target
-        setEmail({ [name]: value })
-    }
-
-    const handleChangePhone = event => {
-        const { name, value } = event.target
-        setPhone({ [name]: value })
-    }
-
-    const handleChangePassword = event => {
-        const { name, value } = event.target
-        setPassword({ [name]: value })
-    }
-
-    const handleChangePasswordConfirmation = event => {
-        const { name, value } = event.target
-        setPasswordConformation({ [name]: value })
-    }
-
-    const onSubmitForm = e => {
+    const onSubmitForm = async e => {
         e.preventDefault()
         try {
             const body = { first_name, last_name, email, phone, password }
-            const response = fetch('http://moboclinic.herokuapp.com/api/register', {
+            await fetch('http://moboclinic.herokuapp.com/api/register', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(body),
@@ -59,12 +39,7 @@ const SignUpPage = () => {
     return (
         <div>
             <SignupForm
-                handleChangeFirsName={handleChangeFirsName}
-                handleChangeLastName={handleChangeLastName}
-                handleChangeEmail={handleChangeEmail}
-                handleChangePhone={handleChangePhone}
-                handleChangePassword={handleChangePassword}
-                handleChangePasswordConfirmation={handleChangePasswordConfirmation}
+                handleChange={handleChange}
                 onSubmitForm={onSubmitForm}
                 firstname={first_name}
                 lastname={last_name}

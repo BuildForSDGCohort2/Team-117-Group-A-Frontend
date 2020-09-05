@@ -14,6 +14,7 @@ const HeaderBar = () => {
                 <Nav className="mr-auto"></Nav>
                 <Link to="/LogonPage">Logon</Link>
                 <Link to="/SignupPage">Signup</Link>
+                <Link to="/MedicalSignupPage">Medical Signup</Link>
             </Navbar>
         </div>
     )
