@@ -6,6 +6,9 @@ import SignupPage from './pages/SignUpPage'
 import MedicalSignupPage from './pages/MedicalSignupPage'
 import TempHomePage from './pages/TempHomePage'
 import HeaderBar from './components/NavBar/NavBar'
+import CustomerDashBoardPage from './pages/CustomerDashBoardPage'
+import AvailableTestsCon from './components/customerComponents/AvailableTestsCon'
+import RequestATestForm from './components/customerComponents/RequestATestForm'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './assets/css/global.css'
@@ -27,6 +30,15 @@ function App() {
                 </Route>
                 <Route path="/MedicalSignupPage">
                     <MedicalSignupPage />
+                </Route>
+                <Route path="/CustomerDashBoardPage">
+                    <CustomerDashBoardPage />
+                </Route>
+                <Route path="/AvailableTestsCon">
+                    <AvailableTestsCon />
+                </Route>
+                <Route path="/RequestATestForm">
+                    <RequestATestForm />
                 </Route>
             </Switch>
         </div>

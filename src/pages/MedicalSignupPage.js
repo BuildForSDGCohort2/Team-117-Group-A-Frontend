@@ -15,13 +15,6 @@ const MedicalSignupPage = () => {
 
     const { name, address, email, phone, password, password_confirmation } = formState
 
-    console.log('name', name)
-    console.log('address', address)
-    console.log('email', email)
-    console.log('phone', phone)
-    console.log('password', password)
-    console.log('password_confirmation', password_confirmation)
-
     const onSubmitForm = e => {
         e.preventDefault()
         try {
@@ -32,6 +25,7 @@ const MedicalSignupPage = () => {
                 body: JSON.stringify(body),
             })
             window.location = '/'
+            return response
         } catch (err) {
             console.error(err.message)
         }

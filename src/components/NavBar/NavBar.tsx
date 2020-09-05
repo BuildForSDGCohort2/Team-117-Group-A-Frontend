@@ -15,6 +15,7 @@ const HeaderBar = () => {
                 <Link to="/LogonPage">Logon</Link>
                 <Link to="/SignupPage">Signup</Link>
                 <Link to="/MedicalSignupPage">Medical Signup</Link>
+                <Link to="/CustomerDashBoardPage">Customer Dashboard</Link>
             </Navbar>
         </div>
     )
