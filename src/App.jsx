@@ -22,13 +22,13 @@ function App() {
                 <Route exact path="/">
                     <TempHomePage />
                 </Route>
-                <Route path="/LogonPage">
+                <Route path="/login">
                     <LogonPage />
                 </Route>
-                <Route path="/SignupPage">
+                <Route path="/sign-up">
                     <SignupPage />
                 </Route>
-                <Route path="/MedicalSignupPage">
+                <Route path="/medical-signup">
                     <MedicalSignupPage />
                 </Route>
                 <Route path="/CustomerDashBoardPage">

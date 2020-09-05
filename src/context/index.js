@@ -1,23 +1,33 @@
 import React, { createContext, useState } from 'react'
-import { login } from '../services/auth'
+import { login, logOut } from '../services/auth'
 
 const AppContext = createContext()
 
 const AppProvider = props => {
-    const [currentUser, setCurrentUser] = useState({})
-
-    const handleLogin = async ({ email, password }) => {
-        const userData = await login({ email, password })
+    const [error, setError] = useState('')
+    const handleLogin = async (username, password) => {
+        const userData = await login(username, password)
         console.log(userData)
-        localStorage.setItem('user', userData)
-        setCurrentUser(userData)
+        localStorage.setItem('user', JSON.stringify(userData))
+        if (userData?.id) {
+            window.location = '/'
+        } else {
+            setError('Error Signing-in')
+            return
+        }
+    }
+
+    const handleLogOut = () => {
+        logOut()
+        window.location = '/login'
     }
 
     return (
         <AppContext.Provider
             value={{
-                currentUser,
+                error,
                 handleLogin,
+                handleLogOut,
             }}
         >
             {props.children}

@@ -27,7 +27,7 @@
         "build": "CI= react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
-        "pretty": "prettier --write \"**/*.{ts,js,tsx,json,yml,md}\""
+        "pretty": "prettier --write \"**/*.{ts,js,jsx,tsx,json,yml,md}\""
     },
     "eslintConfig": {
         "extends": "react-app"

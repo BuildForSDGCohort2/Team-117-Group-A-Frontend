@@ -2,12 +2,13 @@ import React, { useContext, useState } from 'react'
 import { AppContext } from '../context'
 
 import LoginForm from '../components/LoginForm/LoginForm'
+import HeaderBar from '../components/NavBar/NavBar'
 
 const LoginPage = () => {
-    const { handleLogin } = useContext(AppContext)
-    const [formState, setFormState] = useState({})
+    const { currentUser, handleLogin, error } = useContext(AppContext)
+    const [formState, setFormState] = useState({ username: '', password: '' })
 
-    const { email, password } = formState
+    const { username, password } = formState
 
     const handleChange = event => {
         const { name, value } = event.target
@@ -17,14 +18,22 @@ const LoginPage = () => {
         })
     }
 
-    const onSubmitForm = e => {
+    const onSubmitForm = async e => {
         e.preventDefault()
-        handleLogin({ email, password })
+        await handleLogin(username, password)
+        console.log(currentUser)
     }
 
     return (
         <div>
-            <LoginForm handleChange={handleChange} onSubmitForm={onSubmitForm} email={email} password={password} />
+            <HeaderBar />
+            <LoginForm
+                handleChange={handleChange}
+                onSubmitForm={onSubmitForm}
+                username={username}
+                password={password}
+                error={error}
+            />
         </div>
     )
 }

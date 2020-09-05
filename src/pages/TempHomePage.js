@@ -1,10 +1,15 @@
 import React from 'react'
 
+import HeaderBar from '../components/NavBar/NavBar'
+
 const TempHomePage = () => {
     return (
-        <div>
-            <h1>Temp Home Page</h1>
-        </div>
+        <>
+            <HeaderBar />
+            <div>
+                <h1>Temp Home Page</h1>
+            </div>
+        </>
     )
 }
 
