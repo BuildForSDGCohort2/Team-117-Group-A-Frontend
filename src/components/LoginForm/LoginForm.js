@@ -55,6 +55,7 @@ const LoginForm = ({ username, password, handleChange, onSubmitForm, error }) =>
                     </div>
                 </div>
             </div>
+            {error}
         </div>
     )
 }

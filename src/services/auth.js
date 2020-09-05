@@ -33,6 +33,8 @@ export async function login(username, password) {
     }
 }
 
-export async function logOut() {}
+export async function logOut() {
+    localStorage.removeItem('user')
+}
 
 // signup
