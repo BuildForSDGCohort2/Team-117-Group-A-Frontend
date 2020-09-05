@@ -1,12 +1,13 @@
-import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom'
+import React, { useContext, useState } from 'react'
+import { AppContext } from '../context'
 
 import LoginForm from '../components/LoginForm/LoginForm'
 
 const LoginPage = () => {
+    const { handleLogin } = useContext(AppContext)
     const [formState, setFormState] = useState({})
-    const [error, setError] = useState('')
-    const history = useHistory()
+
+    const { email, password } = formState
 
     const handleChange = event => {
         const { name, value } = event.target
@@ -16,36 +17,14 @@ const LoginPage = () => {
         })
     }
 
-    const onSubmitForm = async e => {
+    const onSubmitForm = e => {
         e.preventDefault()
-        try {
-            const body = { email, password }
-            const response = await fetch('http://moboclinic.herokuapp.com/api/login', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(body),
-            })
-            const { status } = response
-            if (status >= 400) {
-                setError('User not found')
-            } else {
-                history.push('/')
-            }
-        } catch (err) {
-            setError('User not found')
-            console.error(err.message)
-        }
+        handleLogin({ email, password })
     }
-    const { email, password } = formState
+
     return (
         <div>
-            <LoginForm
-                handleChange={handleChange}
-                onSubmitForm={onSubmitForm}
-                email={email}
-                password={password}
-                error={error}
-            />
+            <LoginForm handleChange={handleChange} onSubmitForm={onSubmitForm} email={email} password={password} />
         </div>
     )
 }

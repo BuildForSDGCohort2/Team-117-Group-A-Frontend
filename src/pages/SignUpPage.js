@@ -16,11 +16,11 @@ const SignUpPage = () => {
     }
     const { first_name, last_name, email, phone, password, password_confirmation } = formState
 
-    const onSubmitForm = e => {
+    const onSubmitForm = async e => {
         e.preventDefault()
         try {
             const body = { first_name, last_name, email, phone, password }
-            const response = fetch('http://moboclinic.herokuapp.com/api/register', {
+            await fetch('http://moboclinic.herokuapp.com/api/register', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(body),
