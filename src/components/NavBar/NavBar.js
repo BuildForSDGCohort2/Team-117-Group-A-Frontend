@@ -1,24 +1,21 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { Navbar, Nav } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import { AppContext } from '../../context'
 
 import './NavBar.css'
 
-const user = JSON.parse(localStorage.getItem('user'))
-
 const HeaderBar = () => {
-    const { handleLogOut } = useContext(AppContext)
     return (
         <div>
             <Navbar bg="light" variant="light">
-                <Link to="/">MoboClinic</Link>
+                <Navbar.Brand href="#home">
+                    <Link to="/">MoboClinic</Link>
+                </Navbar.Brand>
                 <Nav className="mr-auto"></Nav>
-                <Link to="/medical-signup">Medical Signup</Link>
-                <Link to="/sign-up">Signup</Link>
-                <Link to="/" onClick={handleLogOut}>
-                    Logout
-                </Link>
+                <Link to="/LogonPage">Logon</Link>
+                <Link to="/SignupPage">Signup</Link>
+                <Link to="/MedicalSignupPage">Medical Signup</Link>
+                <Link to="/CustomerDashBoardPage">Customer Dashboard</Link>
             </Navbar>
         </div>
     )
