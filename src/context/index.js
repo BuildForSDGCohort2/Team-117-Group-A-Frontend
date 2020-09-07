@@ -7,12 +7,11 @@ const AppProvider = props => {
     const [error, setError] = useState('')
     const handleLogin = async (username, password) => {
         const userData = await login(username, password)
-        console.log(userData)
         localStorage.setItem('user', JSON.stringify(userData))
         if (userData?.id) {
             window.location = '/'
         } else {
-            setError('Error Signing-in')
+            setError('Error Signing in')
             return
         }
     }

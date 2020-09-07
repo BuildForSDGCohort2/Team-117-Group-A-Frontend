@@ -12,13 +12,13 @@ const HeaderBar = () => {
     return (
         <div>
             <Navbar bg="light" variant="light">
-                <Navbar.Brand href="/">
-                    {user?.id ? <Link to="/">MoboClinic</Link> : <Link to="/login">MoboClinic</Link>}
-                </Navbar.Brand>
+                <Link to="/">MoboClinic</Link>
                 <Nav className="mr-auto"></Nav>
                 <Link to="/medical-signup">Medical Signup</Link>
-                {user?.id ? null : <Link to="/sign-up">Signup</Link>}
-                {user?.id ? <Link onClick={handleLogOut}>Logout</Link> : null}
+                <Link to="/sign-up">Signup</Link>
+                <Link to="/" onClick={handleLogOut}>
+                    Logout
+                </Link>
             </Navbar>
         </div>
     )
