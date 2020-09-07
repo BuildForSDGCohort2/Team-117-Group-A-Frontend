@@ -5,7 +5,6 @@ import { LogonPage } from './pages'
 import SignupPage from './pages/SignUpPage'
 import MedicalSignupPage from './pages/MedicalSignupPage'
 import TempHomePage from './pages/TempHomePage'
-import HeaderBar from './components/NavBar/NavBar'
 import CustomerDashBoardPage from './pages/CustomerDashBoardPage'
 import AvailableTestsCon from './components/customerComponents/AvailableTestsCon'
 import RequestATestForm from './components/customerComponents/RequestATestForm'
@@ -17,7 +16,6 @@ import './App.css'
 function App() {
     return (
         <div className="App">
-            <HeaderBar />
             <Switch>
                 <Route exact path="/">
                     <TempHomePage />
