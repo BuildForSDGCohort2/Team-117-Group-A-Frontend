@@ -29,13 +29,13 @@ function App() {
                 <Route path="/medical-signup">
                     <MedicalSignupPage />
                 </Route>
-                <Route path="/CustomerDashBoardPage">
+                <Route path="/customerDashBoardPage">
                     <CustomerDashBoardPage />
                 </Route>
-                <Route path="/AvailableTestsCon">
+                <Route path="/availableTestsCon">
                     <AvailableTestsCon />
                 </Route>
-                <Route path="/RequestATestForm">
+                <Route path="/requestATestForm">
                     <RequestATestForm />
                 </Route>
             </Switch>
