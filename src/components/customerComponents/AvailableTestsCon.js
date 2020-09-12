@@ -11,7 +11,6 @@ const AvailableTestsCon = () => {
         setDisplayTestInfo(prevState => !displayTestInfo)
     }
 
-    console.log('availableTests', availableTests[0].id)
     return (
         <div>
             <CustomerNav />
