@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import CustomerNav from './CustomerNav/CustomerNav'
 import { availableTests } from './availableTests'
 import ListOfTests from './ListOfTests'
 
 const AvailableTestsCon = () => {
+    const [displayTestInfo, setDisplayTestInfo] = useState(false)
+
+    const display = id => {
+        console.log('id', id)
+        setDisplayTestInfo(prevState => !displayTestInfo)
+    }
+
+    console.log('availableTests', availableTests[0].id)
     return (
         <div>
             <CustomerNav />
@@ -13,10 +21,12 @@ const AvailableTestsCon = () => {
             {availableTests.map((user, i) => {
                 return (
                     <ListOfTests
-                        key={i}
+                        id={i}
                         testName={availableTests[i].testName}
                         price={availableTests[i].price}
                         description={availableTests[i].description}
+                        displaydescription={displayTestInfo}
+                        onchangedisplay={display}
                     />
                 )
             })}
