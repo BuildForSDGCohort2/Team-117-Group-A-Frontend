@@ -8,6 +8,9 @@ const AvailableTestsCon = () => {
 
     const display = id => {
         console.log('id', id)
+        console.log('availableTests', availableTests)
+        //map availabe test and sets state displyTestInfo to show/hide as per id received.
+
         setDisplayTestInfo(prevState => !displayTestInfo)
     }
 
