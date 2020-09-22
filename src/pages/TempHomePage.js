@@ -5,7 +5,8 @@ import HeaderBar from '../components/NavBar/NavBar'
 import './index.css'
 
 const TempHomePage = () => {
-    const { currentUser } = useContext(AppContext)
+    const { currentUser, loading } = useContext(AppContext)
+    console.log(currentUser)
     return (
         <>
             <HeaderBar />

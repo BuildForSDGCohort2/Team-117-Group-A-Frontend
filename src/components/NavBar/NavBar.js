@@ -8,7 +8,7 @@ import './NavBar.css'
 
 const HeaderBar = () => {
     const { handleLogout, currentUser } = useContext(AppContext)
-    const isAuth = !!currentUser.id
+    // const isAuth = !!currentUser.id
     return (
         <div>
             <Navbar bg="light" variant="light">
@@ -16,11 +16,13 @@ const HeaderBar = () => {
                     <Link to="/">MoboClinic</Link>
                 </Navbar.Brand>
                 <Nav className="mr-auto"></Nav>
-                {isAuth ? null : <Link to="/login">Logon</Link>}
-                {isAuth ? null : <Link to="/sign-up">Signup</Link>}
-                {isAuth ? <Link onClick={handleLogout}>SignOut</Link> : null}
-                {isAuth ? <Link to="/medical-signup">Medical Signup</Link> : null}
-                {isAuth ? <Link to="/customerDashBoard">Customer Dashboard</Link> : null}
+                <Link to="/login">Logon</Link>
+                <Link to="/sign-up">Signup</Link>
+                <Link to="/login" onClick={handleLogout}>
+                    SignOut
+                </Link>
+                <Link to="/medical-signup">Medical Signup</Link>
+                <Link to="/customerDashBoard">Customer Dashboard</Link>
             </Navbar>
         </div>
     )
