@@ -5,6 +5,7 @@ const AppContext = createContext()
 
 const AppProvider = props => {
     const [error, setError] = useState('')
+
     const handleLogin = async (username, password) => {
         const userData = await login(username, password)
         localStorage.setItem('user', JSON.stringify(userData))
