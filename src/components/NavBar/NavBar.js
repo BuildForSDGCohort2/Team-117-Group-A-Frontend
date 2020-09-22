@@ -3,26 +3,28 @@ import { Navbar, Nav } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 
 import { AppContext } from '../../context'
+import { getUserFromLocalStorage } from '../../utils'
 
 import './NavBar.css'
 
 const HeaderBar = () => {
-    const { handleLogout, currentUser } = useContext(AppContext)
-    // const isAuth = !!currentUser.id
+    const { handleLogOut } = useContext(AppContext)
+    const isAuth = getUserFromLocalStorage()
+
     return (
         <div>
             <Navbar bg="light" variant="light">
-                <Navbar.Brand>
-                    <Link to="/">MoboClinic</Link>
-                </Navbar.Brand>
+                <Navbar.Brand>{isAuth ? <Link to="/">MoboClinic</Link> : null}</Navbar.Brand>
                 <Nav className="mr-auto"></Nav>
-                <Link to="/login">Logon</Link>
-                <Link to="/sign-up">Signup</Link>
-                <Link to="/login" onClick={handleLogout}>
-                    SignOut
-                </Link>
+                {isAuth ? null : <Link to="/login">Login</Link>}
+                {isAuth ? null : <Link to="/sign-up">Signup</Link>}
+                {isAuth ? (
+                    <Link to="/login" onClick={handleLogOut}>
+                        SignOut
+                    </Link>
+                ) : null}
                 <Link to="/medical-signup">Medical Signup</Link>
-                <Link to="/customerDashBoard">Customer Dashboard</Link>
+                {isAuth ? <Link to="/customerDashBoard">Customer Dashboard</Link> : null}
             </Navbar>
         </div>
     )

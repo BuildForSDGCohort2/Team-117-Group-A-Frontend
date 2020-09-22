@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 
 import { LogonPage } from './pages'
@@ -9,16 +9,15 @@ import CustomerDashBoardPage from './pages/CustomerDashBoardPage'
 import AvailableTestsCon from './components/customerComponents/AvailableTestsCon'
 import RequestATestForm from './components/customerComponents/RequestATestForm'
 
-import { AppContext } from './context'
+import { getUserFromLocalStorage } from './utils'
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './assets/css/global.css'
 import './App.css'
 
 function App() {
-    const { currentUser } = useContext(AppContext)
     const isAuth = path => {
-        return currentUser?.id ? path : '/'
+        return getUserFromLocalStorage() ? path : '/'
     }
     return (
         <div className="App">
@@ -26,13 +25,13 @@ function App() {
                 <Route exact path="/">
                     <TempHomePage />
                 </Route>
-                <Route path={isAuth('/login')}>
+                <Route path="/login">
                     <LogonPage />
                 </Route>
                 <Route path={isAuth('/sign-up')}>
                     <SignupPage />
                 </Route>
-                <Route path={isAuth('/medical-signup')}>
+                <Route path="/medical-signup">
                     <MedicalSignupPage />
                 </Route>
                 <Route path={isAuth('/customerDashBoard')}>

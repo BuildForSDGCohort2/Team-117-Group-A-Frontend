@@ -1,17 +1,17 @@
-import React, { useContext } from 'react'
-import { AppContext } from '../context'
+import React from 'react'
 
 import HeaderBar from '../components/NavBar/NavBar'
-import './index.css'
+import { getUserFromLocalStorage } from '../utils'
 
+import './index.css'
 const TempHomePage = () => {
-    const { currentUser, loading } = useContext(AppContext)
+    const currentUser = getUserFromLocalStorage()
     console.log(currentUser)
     return (
         <>
             <HeaderBar />
             <div className="page">
-                <h1>Temp Home Page</h1>
+                <h3>Welcome {currentUser.first_name.toUpperCase()}</h3>
             </div>
         </>
     )
