@@ -10,13 +10,12 @@ const AppProvider = props => {
 
     const handleLogin = async (username, password) => {
         const userData = await login(username, password)
+        setLoading(false)
 
         if (userData?.id) {
-            setLoading(false)
             localStorage.setItem('user', JSON.stringify(userData))
         } else {
             setError('Error Signing in')
-            setLoading(false)
             return
         }
     }

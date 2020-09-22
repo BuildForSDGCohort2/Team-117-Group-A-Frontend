@@ -32,5 +32,3 @@ export async function login(username, password) {
         console.log(error)
     }
 }
-
-// signup
