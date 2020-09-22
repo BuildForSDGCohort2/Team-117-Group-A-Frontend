@@ -12,7 +12,7 @@ const TempHomePage = () => {
         <>
             <HeaderBar />
             <div className="page">
-                <h3>Welcome {currentUser.first_name.toUpperCase()}</h3>
+                <h3>Welcome {currentUser?.first_name.toUpperCase()}</h3>
             </div>
         </>
     )

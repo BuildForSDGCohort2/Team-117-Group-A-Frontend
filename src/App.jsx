@@ -22,7 +22,7 @@ function App() {
     return (
         <div className="App">
             <Switch>
-                <Route exact path="/">
+                <Route exact path={isAuth('/')}>
                     <TempHomePage />
                 </Route>
                 <Route path="/login">
