@@ -1,64 +1,58 @@
-export const userInfoContext = [
-    {
-        logedOnUser: [
-            {
-                id: 1,
-                userName: 'Wim test user 1',
-                adress: 'The patients adress',
-                telNo: '01234567891',
-                testResults: [
-                    {
-                        id: 1,
-                        Test1: 'TestName',
-                        result: 'Positive',
-                        date: '01-01-0101',
-                    },
-                    {
-                        id: 2,
-                        Test2: 'TestName',
-                        result: 'Negative',
-                        date: '01-01-0101',
-                    },
-                    {
-                        id: 3,
-                        Test3: 'TestName',
-                        result: 'Inconclusive',
-                        date: '01-01-0101',
-                    },
-                    {
-                        id: 4,
-                        Test4: 'TestName',
-                        result: 'Pending',
-                        date: '01-01-0101',
-                    },
-                ],
-                requestATest: [
-                    {
-                        id: 1,
-                        Test1: 'TestName',
-                        status: 'Loged',
-                        date: '01-01-0101',
-                    },
-                    {
-                        id: 2,
-                        Test2: 'TestName',
-                        status: 'Dispatched',
-                        date: '01-01-0101',
-                    },
-                    {
-                        id: 3,
-                        Test3: 'TestName',
-                        status: 'Collected',
-                        date: '01-01-0101',
-                    },
-                    {
-                        id: 4,
-                        Test4: 'TestName',
-                        result: 'Pending',
-                        date: '01-01-0101',
-                    },
-                ],
-            },
-        ],
-    },
-]
+import React from 'react'
+
+const { Provider, Consumer } = React.createContext()
+
+const userInfoContext = () => {
+    return <Provider value={{ username, changeName: this.changeName }}>{this.props.children}</Provider>
+}
+
+export { userInfoContext, Consumer as UserInfoContextConsumer }
+
+// All the api end point to update users info
+
+// Add Test
+// Post request to https://moboclinic.herokuapp.com/api/addTest
+// {
+//   "testName": "Typhoid",
+//   "price": "4000",
+//   "description": "A test for Typhoid"
+// }
+
+// Get Tests
+// Get request to https://moboclinic.herokuapp.com/api/tests
+
+// Update Test
+// Put request to https://moboclinic.herokuapp.com/api/test/11  where 11 is the id number of the test to be updated
+
+// {
+//   "testName": "Typhoid",
+//   "price": "4000",
+//   "description": "A test for Typhoid"
+// }
+
+// Delete Test
+// Delete request to https://moboclinic.herokuapp.com/api/test/1 where 1 is the id of the test to be deleted
+
+// Add Request
+// Post request to https://moboclinic.herokuapp.com/api/addRequest
+
+// {
+//   "testId": 31,
+//   "customerId": 31,
+//   "address": "55 Avenue"
+// }
+
+// Get Requests for test
+// Get request to https://moboclinic.herokuapp.com/api/requests
+
+// Update Request for test
+// Put request to https://moboclinic.herokuapp.com/api/request/11 where 11 is the id of the request to be updated
+
+// {
+//   "testId": 31,
+//   "customerId": 31,
+//   "address": "50 Agege"
+// }
+
+// Delete Request for test
+// Delete request to https://moboclinic.herokuapp.com/api/request/11 where 11 is the id of the request to be deleted
