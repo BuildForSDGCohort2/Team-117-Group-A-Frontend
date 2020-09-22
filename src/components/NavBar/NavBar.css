@@ -3,6 +3,12 @@ a {
     list-style: none;
     margin: 5px;
     padding: 3px;
-    border: 1px grey solid;
-    border-radius: 5px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 41px;
+    color: #000000 !important;
+}
+.navbar {
+    height: 70px;
+    background: #f3eeee;
 }

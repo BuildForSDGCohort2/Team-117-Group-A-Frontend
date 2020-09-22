@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 import MedicalSignupForm from '../components/MedicalSignup/MedicalSignupForm'
 import HeaderBar from '../components/NavBar/NavBar'
+import './index.css'
 
 const MedicalSignupPage = () => {
     const [formState, setFormState] = useState({})
@@ -35,16 +36,18 @@ const MedicalSignupPage = () => {
     return (
         <div>
             <HeaderBar />
-            <MedicalSignupForm
-                handleChange={handleChange}
-                onSubmitForm={onSubmitForm}
-                companyname={name}
-                address={address}
-                companyemail={email}
-                phonenumber={phone}
-                password={password}
-                passwordconfirmation={password_confirmation}
-            />
+            <div className="signup-page">
+                <MedicalSignupForm
+                    handleChange={handleChange}
+                    onSubmitForm={onSubmitForm}
+                    companyname={name}
+                    address={address}
+                    companyemail={email}
+                    phonenumber={phone}
+                    password={password}
+                    passwordconfirmation={password_confirmation}
+                />
+            </div>
         </div>
     )
 }

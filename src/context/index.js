@@ -1,15 +1,21 @@
 import React, { createContext, useState } from 'react'
-import { login, logOut } from '../services/auth'
+import { useHistory } from 'react-router-dom'
+
+import { login } from '../services/auth'
 
 const AppContext = createContext()
 
 const AppProvider = props => {
     const [error, setError] = useState('')
+    const [currentUser, setCurrentUser] = useState({})
+
+    let history = useHistory()
     const handleLogin = async (username, password) => {
         const userData = await login(username, password)
-        localStorage.setItem('user', JSON.stringify(userData))
+
         if (userData?.id) {
-            window.location = '/'
+            setCurrentUser(userData)
+            return userData
         } else {
             setError('Error Signing in')
             return
@@ -17,8 +23,9 @@ const AppProvider = props => {
     }
 
     const handleLogOut = () => {
-        logOut()
-        window.location = '/login'
+        console.log('loggedout')
+        setCurrentUser(null)
+        history.push('/')
     }
 
     return (
@@ -27,6 +34,7 @@ const AppProvider = props => {
                 error,
                 handleLogin,
                 handleLogOut,
+                currentUser,
             }}
         >
             {props.children}

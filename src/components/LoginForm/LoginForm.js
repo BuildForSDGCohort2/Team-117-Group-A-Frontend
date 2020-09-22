@@ -12,7 +12,7 @@ const LoginForm = ({ username, password, handleChange, onSubmitForm, error }) =>
                             <h3 className="panel-title text-center">Login</h3>
                         </div>
                         <div className="panel-body">
-                            <form>
+                            <form onSubmit={e => onSubmitForm(e)}>
                                 <div className="row">
                                     <div className="col-xs-12 col-sm-12">
                                         <div className="form-group">

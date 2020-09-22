@@ -29,7 +29,7 @@ function App() {
                 <Route path="/medical-signup">
                     <MedicalSignupPage />
                 </Route>
-                <Route path="/customerDashBoardPage">
+                <Route path="/customerDashBoard">
                     <CustomerDashBoardPage />
                 </Route>
                 <Route path="/availableTestsCon">
