@@ -1,11 +1,14 @@
 import React from 'react'
+
 import CustomerNav from './CustomerNav/CustomerNav'
+import HeaderBar from '../NavBar/NavBar'
 
 import './CustomerDashBoardForm.css'
 
 const CustomerDashBoardForm = () => {
     return (
         <div className="back">
+            <HeaderBar />
             <CustomerNav />
             <div>
                 <div className="container">

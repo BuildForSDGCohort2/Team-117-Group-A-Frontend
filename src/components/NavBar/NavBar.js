@@ -5,8 +5,6 @@ import { AppContext } from '../../context'
 
 import './NavBar.css'
 
-// const user = JSON.parse(localStorage.getItem('user'))
-
 const HeaderBar = () => {
     const { handleLogOut } = useContext(AppContext)
     return (
@@ -17,6 +15,7 @@ const HeaderBar = () => {
                 <Link to="/medical-signup">Medical Signup</Link>
                 <Link to="/sign-up">Signup</Link>
                 <Link to="/CustomerDashBoardPage">Customer Dashboard</Link>
+                <Link to="/AminPage">Admin</Link>
                 <Link to="/" onClick={handleLogOut}>
                     Logout
                 </Link>
