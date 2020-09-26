@@ -29,14 +29,11 @@ const ListOfTests = () => {
                 return (
                     <div key={data.id}>
                         <div className="d-flex justify-content-around">
-                            <p>Type of test</p>
+                            <p>{data.testName}</p>
                             <p>Curency indicater:{data.price}</p>
                         </div>
                         <div className="d-flex justify-content-center">
-                            <p>
-                                See more info <br />
-                                {data.description}
-                            </p>
+                            <p>{data.description}</p>
                         </div>
                         <hr />
                     </div>
