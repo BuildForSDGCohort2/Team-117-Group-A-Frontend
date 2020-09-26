@@ -34,7 +34,7 @@ function App() {
                 <Route path="/medical-signup">
                     <MedicalSignupPage />
                 </Route>
-                <Route path={isAuth('/customerDashBoard')}>
+                <Route path={isAuth('/customer-dashboard')}>
                     <CustomerDashBoardPage />
                 </Route>
                 <Route path={isAuth('/requestATestPage')}>
