@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 
 import RequestATestForm from '../components/customerComponents/RequestATestForm'
 import HeaderBar from '../components/NavBar/NavBar'
+import { getUserFromLocalStorage } from '../utils/index'
 
 const RequestATestPage = () => {
     // Form state

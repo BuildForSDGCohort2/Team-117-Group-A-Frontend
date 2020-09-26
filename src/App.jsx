@@ -6,8 +6,7 @@ import SignupPage from './pages/SignUpPage'
 import MedicalSignupPage from './pages/MedicalSignupPage'
 import TempHomePage from './pages/TempHomePage'
 import CustomerDashBoardPage from './pages/CustomerDashBoardPage'
-import RequestATestPage from './pages/RequestATestPage'
-import ListOfTests from './components/customerComponents/ListOfTests'
+import RequestATestForm from './components/customerComponents/RequestATestForm'
 import AminPage from './pages/AdminPage'
 
 import { getUserFromLocalStorage } from './utils'
@@ -38,10 +37,7 @@ function App() {
                 <Route path={isAuth('/customerDashBoard')}>
                     <CustomerDashBoardPage />
                 </Route>
-                <Route path={isAuth('/availableTestsCon')}>
-                    <AvailableTestsCon />
-                </Route>
-                <Route path={isAuth('/requestATestForm')}>
+                <Route path={isAuth('/requestATestPage')}>
                     <RequestATestForm />
                 </Route>
                 <Route path="/AminPage">
