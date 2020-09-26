@@ -1,9 +1,12 @@
 import React from 'react'
 import CustomerNav from './CustomerNav/CustomerNav'
+import { getUserFromLocalStorage } from '../../utils'
 
 import './RequestATestForm.css'
 
 const RequestATestForm = ({ handlechange, onsubmitform, patientadress, testname }) => {
+    const currentUser = getUserFromLocalStorage()
+    console.log('user', currentUser)
     return (
         <div className="back">
             <CustomerNav />

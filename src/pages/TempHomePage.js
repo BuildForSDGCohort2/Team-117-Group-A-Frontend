@@ -1,8 +1,7 @@
-import React, { useContext } from 'react'
+import React from 'react'
 
 import HeaderBar from '../components/NavBar/NavBar'
 import { getUserFromLocalStorage } from '../utils'
-import { AppContext } from '../context'
 
 import './index.css'
 const TempHomePage = () => {
