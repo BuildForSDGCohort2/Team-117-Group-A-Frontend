@@ -1,23 +1,47 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+
+import CustomerNav from './CustomerNav/CustomerNav'
+import NavBar from '../NavBar/NavBar'
 import './ListOfTests.css'
 
-const ListOfTests = props => {
-    const { testName, price, description, onchangedisplay, displaydescription, id } = props
-    // console.log("props", props)
+const ListOfTests = () => {
+    const [testList, setTestList] = useState([])
+
+    const ListOfTestsa = async () => {
+        try {
+            const response = await fetch('http://moboclinic.herokuapp.com/api/tests')
+            const jsonData = await response.json()
+            setTestList(jsonData.data)
+        } catch (err) {
+            console.error(err.message)
+        }
+    }
+
+    useEffect(() => {
+        ListOfTestsa()
+    }, [])
+
     return (
         <div className="container-*">
-            <div className="section">
-                <div className="d-flex justify-content-around">
-                    <p>{testName}</p>
-                    <p>Curency indicater: {price}</p>
-                </div>
-            </div>
-            <div className="d-flex justify-content-center">
-                <p key={id} onClick={() => onchangedisplay(id)}>
-                    See more info{displaydescription ? description : null}
-                </p>
-            </div>
-            <hr />
+            <NavBar />
+            <CustomerNav />
+            {testList.map(data => {
+                return (
+                    <div key={data.id}>
+                        <div className="d-flex justify-content-around">
+                            <p>Type of test</p>
+                            <p>Curency indicater:{data.price}</p>
+                        </div>
+                        <div className="d-flex justify-content-center">
+                            <p>
+                                See more info <br />
+                                {data.description}
+                            </p>
+                        </div>
+                        <hr />
+                    </div>
+                )
+            })}
         </div>
     )
 }

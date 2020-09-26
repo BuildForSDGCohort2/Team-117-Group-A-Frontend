@@ -1,12 +1,12 @@
-import React from 'react'
+// import React from 'react'
 
-const { Provider, Consumer } = React.createContext()
+// const { Provider, Consumer } = React.createContext()
 
-const userInfoContext = () => {
-    return <Provider value={{ username, changeName: this.changeName }}>{this.props.children}</Provider>
-}
+// const userInfoContext = () =>
+//  return <Provider value={{  }}>{this.props.children}</Provider>
+// }
 
-export { userInfoContext, Consumer as UserInfoContextConsumer }
+// export { userInfoContext, Consumer as UserInfoContextConsumer }
 
 // All the api end point to update users info
 

@@ -26,7 +26,7 @@ const RequestATestForm = () => {
                                 name="patient_adress"
                                 id="patient_adress"
                                 className="form-control input-sm"
-                                placeholder="Adress where test must be done"
+                                placeholder="Patients Adress"
                             />
                         </form>
                     </div>
