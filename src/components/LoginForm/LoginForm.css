@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 10%;
 }
 
 .loginForm input[type='submit'].btn-block {

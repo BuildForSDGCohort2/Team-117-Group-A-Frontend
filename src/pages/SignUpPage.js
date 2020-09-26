@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 import SignupForm from '../components/SignupForm/SignupForm'
-
+import './index.css'
 const SignUpPage = () => {
     // Form state
     const [formState, setFormState] = useState({})

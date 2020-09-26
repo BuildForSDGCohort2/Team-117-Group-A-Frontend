@@ -10,34 +10,39 @@ import RequestATestPage from './pages/RequestATestPage'
 import ListOfTests from './components/customerComponents/ListOfTests'
 import AminPage from './pages/AdminPage'
 
+import { getUserFromLocalStorage } from './utils'
+
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './assets/css/global.css'
 import './App.css'
 
 function App() {
+    const isAuth = path => {
+        return getUserFromLocalStorage() ? path : '/'
+    }
     return (
         <div className="App">
             <Switch>
-                <Route exact path="/">
+                <Route exact path={isAuth('/')}>
                     <TempHomePage />
                 </Route>
                 <Route path="/login">
                     <LogonPage />
                 </Route>
-                <Route path="/sign-up">
+                <Route path={isAuth('/sign-up')}>
                     <SignupPage />
                 </Route>
                 <Route path="/medical-signup">
                     <MedicalSignupPage />
                 </Route>
-                <Route path="/customerDashBoardPage">
+                <Route path={isAuth('/customerDashBoard')}>
                     <CustomerDashBoardPage />
                 </Route>
-                <Route path="/availableTestsCon">
-                    <ListOfTests />
+                <Route path={isAuth('/availableTestsCon')}>
+                    <AvailableTestsCon />
                 </Route>
-                <Route path="/RequestATestPage">
-                    <RequestATestPage />
+                <Route path={isAuth('/requestATestForm')}>
+                    <RequestATestForm />
                 </Route>
                 <Route path="/AminPage">
                     <AminPage />

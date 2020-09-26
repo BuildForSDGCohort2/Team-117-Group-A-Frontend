@@ -1,12 +1,16 @@
 import React, { useContext, useState } from 'react'
 import { AppContext } from '../context'
+import { useHistory, useLocation } from 'react-router-dom'
 
 import LoginForm from '../components/LoginForm/LoginForm'
 import HeaderBar from '../components/NavBar/NavBar'
+import './index.css'
 
 const LoginPage = () => {
-    const { currentUser, handleLogin, error } = useContext(AppContext)
+    const { handleLogin, error } = useContext(AppContext)
     const [formState, setFormState] = useState({ username: '', password: '' })
+    let history = useHistory()
+    let location = useLocation()
 
     const { username, password } = formState
 
@@ -20,21 +24,24 @@ const LoginPage = () => {
 
     const onSubmitForm = async e => {
         e.preventDefault()
+        let { from } = location.state || { from: { pathname: '/' } }
         await handleLogin(username, password)
-        console.log(currentUser)
+        history.replace(from)
     }
 
     return (
-        <div>
+        <>
             <HeaderBar />
-            <LoginForm
-                handleChange={handleChange}
-                onSubmitForm={onSubmitForm}
-                username={username}
-                password={password}
-                error={error}
-            />
-        </div>
+            <div className="login-page">
+                <LoginForm
+                    handleChange={handleChange}
+                    onSubmitForm={onSubmitForm}
+                    username={username}
+                    password={password}
+                    error={error}
+                />
+            </div>
+        </>
     )
 }
 

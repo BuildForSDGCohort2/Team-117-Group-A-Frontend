@@ -1,16 +1,19 @@
 import React, { createContext, useState } from 'react'
-import { login, logOut } from '../services/auth'
+
+import { login } from '../services/auth'
 
 const AppContext = createContext()
 
 const AppProvider = props => {
     const [error, setError] = useState('')
+    const [loading, setLoading] = useState(true)
 
     const handleLogin = async (username, password) => {
         const userData = await login(username, password)
-        localStorage.setItem('user', JSON.stringify(userData))
+        setLoading(false)
+
         if (userData?.id) {
-            window.location = '/'
+            localStorage.setItem('user', JSON.stringify(userData))
         } else {
             setError('Error Signing in')
             return
@@ -18,8 +21,7 @@ const AppProvider = props => {
     }
 
     const handleLogOut = () => {
-        logOut()
-        window.location = '/login'
+        localStorage.removeItem('user')
     }
 
     return (
@@ -28,6 +30,7 @@ const AppProvider = props => {
                 error,
                 handleLogin,
                 handleLogOut,
+                loading,
             }}
         >
             {props.children}

@@ -15,8 +15,8 @@ const acquireToken = async (username, password) => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(authBody),
     })
-    const { access_token } = await response.json()
-    return access_token
+    const data = await response.json()
+    return data.access_token
 }
 
 export async function login(username, password) {
@@ -32,9 +32,3 @@ export async function login(username, password) {
         console.log(error)
     }
 }
-
-export async function logOut() {
-    localStorage.removeItem('user')
-}
-
-// signup
