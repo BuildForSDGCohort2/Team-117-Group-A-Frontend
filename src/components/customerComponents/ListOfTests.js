@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react'
 import CustomerNav from './CustomerNav/CustomerNav'
 import NavBar from '../NavBar/NavBar'
 import EditListOfTests from './EditListOfTests'
+import AddATestForm from './AddATestForm'
 import './ListOfTests.css'
 
 const ListOfTests = () => {
@@ -24,6 +25,7 @@ const ListOfTests = () => {
 
     return (
         <div className="container-*">
+            <AddATestForm />
             <NavBar />
             <CustomerNav />
             <div>

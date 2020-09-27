@@ -4,7 +4,6 @@ const EditListOfTests = ({ testList }) => {
     const [description, SetDescription] = useState(testList.description)
     const [testName, SetTestName] = useState(testList.testName)
     const [price, SetPrice] = useState(testList.price)
-    console.log('testName', testName)
 
     // Edit description function
     const updateDescription = async e => {
@@ -63,7 +62,6 @@ const EditListOfTests = ({ testList }) => {
                                 type="text"
                                 className="form-control"
                                 name="testName"
-                                // value={testList.testName}
                                 onChange={e => SetTestName(e.target.value)}
                             />
                             <p>Price</p>
@@ -71,7 +69,6 @@ const EditListOfTests = ({ testList }) => {
                                 type="text"
                                 className="form-control"
                                 name="price"
-                                // value={testList.price}
                                 onChange={e => SetPrice(e.target.value)}
                             />
                             <p>Description</p>
@@ -79,7 +76,6 @@ const EditListOfTests = ({ testList }) => {
                                 type="text"
                                 className="form-control"
                                 name="description"
-                                // value={testList.description}
                                 onChange={e => SetDescription(e.target.value)}
                             />
                         </div>
