@@ -58,7 +58,7 @@ const ListOfTests = () => {
                                     <td>{data.price}</td>
                                     <td>{data.description}</td>
                                     <td>
-                                        <EditListOfTests testList={testList} />
+                                        <EditListOfTests testList={testList[0]} />
                                     </td>
                                     <td>
                                         <button>Delete</button>

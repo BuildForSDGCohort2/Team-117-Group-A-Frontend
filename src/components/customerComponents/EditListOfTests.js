@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 
 const EditListOfTests = ({ testList }) => {
-    const [description, SetDescription] = useState(testList[0].description)
-    const [testName, SetTestName] = useState(testList[0].testName)
-    const [price, SetPrice] = useState(testList[0].price)
+    const [description, SetDescription] = useState(testList.description)
+    const [testName, SetTestName] = useState(testList.testName)
+    const [price, SetPrice] = useState(testList.price)
     console.log('price', price)
 
     // Edit description function
@@ -11,7 +11,7 @@ const EditListOfTests = ({ testList }) => {
         e.preventDefault()
         try {
             const body = { testName, price, description }
-            const response = await fetch(`http://localhost:5000/todos/${testList[0].id}`, {
+            const response = await fetch(`https://moboclinic.herokuapp.com/api/test/${testList.id}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(body),
@@ -25,17 +25,17 @@ const EditListOfTests = ({ testList }) => {
 
     return (
         <div>
-            <button type="button" className="btn btn-warning" data-toggle="modal" data-target={`#id${testList[0].id}`}>
+            <button type="button" className="btn btn-warning" data-toggle="modal" data-target={`#id${testList.id}`}>
                 Edit
             </button>
 
             <div
                 className="modal"
-                id={`id${testList[0].id}`}
+                id={`id${testList.id}`}
                 onClick={() => {
-                    SetTestName(testList[0].testName)
-                    SetPrice(testList[0].price)
-                    SetDescription(testList[0].description)
+                    SetTestName(testList.testName)
+                    SetPrice(testList.price)
+                    SetDescription(testList.description)
                 }}
             >
                 <div className="modal-dialog">
@@ -48,9 +48,9 @@ const EditListOfTests = ({ testList }) => {
                                 className="close"
                                 data-dismiss="modal"
                                 onClick={() => {
-                                    SetTestName(testList[0].testName)
-                                    SetPrice(testList[0].price)
-                                    SetDescription(testList[0].description)
+                                    SetTestName(testList.testName)
+                                    SetPrice(testList.price)
+                                    SetDescription(testList.description)
                                 }}
                             >
                                 &times;
@@ -62,21 +62,21 @@ const EditListOfTests = ({ testList }) => {
                             <input
                                 type="text"
                                 className="form-control"
-                                value={testList[0].testName}
+                                value={testList.testName}
                                 onChange={e => SetTestName(e.target.value)}
                             />
                             <p>Price</p>
                             <input
                                 type="text"
                                 className="form-control"
-                                value={testList[0].price}
+                                value={testList.price}
                                 onChange={e => SetPrice(e.target.value)}
                             />
                             <p>Description</p>
                             <input
                                 type="text"
                                 className="form-control"
-                                value={testList[0].description}
+                                value={testList.description}
                                 onChange={e => SetDescription(e.target.value)}
                             />
                         </div>
@@ -95,9 +95,9 @@ const EditListOfTests = ({ testList }) => {
                                 className="btn btn-danger"
                                 data-dismiss="modal"
                                 onClick={() => {
-                                    SetTestName(testList[0].testName)
-                                    SetPrice(testList[0].price)
-                                    SetDescription(testList[0].description)
+                                    SetTestName(testList.testName)
+                                    SetPrice(testList.price)
+                                    SetDescription(testList.description)
                                 }}
                             >
                                 Close
