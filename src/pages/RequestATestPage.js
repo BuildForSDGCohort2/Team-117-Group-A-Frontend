@@ -16,8 +16,8 @@ const RequestATestPage = () => {
             [name]: value,
         })
     }
-
-    const { testId, test_name, patient_adress } = formState
+    const testId = getUserFromLocalStorage().id
+    const { test_name, patient_adress } = formState
 
     const onSubmitForm = async e => {
         e.preventDefault()
@@ -33,7 +33,7 @@ const RequestATestPage = () => {
             console.error(err.message)
         }
     }
-    console.log('formState', formState)
+
     return (
         <div>
             <HeaderBar />
