@@ -4,7 +4,7 @@ const EditListOfTests = ({ testList }) => {
     const [description, SetDescription] = useState(testList.description)
     const [testName, SetTestName] = useState(testList.testName)
     const [price, SetPrice] = useState(testList.price)
-    console.log('price', price)
+    console.log('testName', testName)
 
     // Edit description function
     const updateDescription = async e => {
@@ -16,7 +16,7 @@ const EditListOfTests = ({ testList }) => {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(body),
             })
-            window.location = '/'
+            window.location = '/ListOfTests'
             return response
         } catch (err) {
             console.error(err.message)
@@ -62,21 +62,24 @@ const EditListOfTests = ({ testList }) => {
                             <input
                                 type="text"
                                 className="form-control"
-                                value={testList.testName}
+                                name="testName"
+                                // value={testList.testName}
                                 onChange={e => SetTestName(e.target.value)}
                             />
                             <p>Price</p>
                             <input
                                 type="text"
                                 className="form-control"
-                                value={testList.price}
+                                name="price"
+                                // value={testList.price}
                                 onChange={e => SetPrice(e.target.value)}
                             />
                             <p>Description</p>
                             <input
                                 type="text"
                                 className="form-control"
-                                value={testList.description}
+                                name="description"
+                                // value={testList.description}
                                 onChange={e => SetDescription(e.target.value)}
                             />
                         </div>

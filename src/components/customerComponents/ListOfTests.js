@@ -7,20 +7,7 @@ import './ListOfTests.css'
 
 const ListOfTests = () => {
     const [testList, setTestList] = useState([])
-    //Delete todo function
-    // const deleteTestsa = async (id) => {
-    //   try {
-    //     const deleteTestsa = await fetch(`https://moboclinic.herokuapp.com/api/test/${id}`, {
-    //       method: "DELETE"
-    //     });
-    //     return setTestList(setTestList.filter(data => data.id !== id))
-    //   } catch (err) {
-    //     console.error(err.message);
-    //   }
-    //   return deleteTestsa
-    // }
 
-    //get the list of tests
     const ListOfTestsa = async () => {
         try {
             const response = await fetch('http://moboclinic.herokuapp.com/api/tests')
