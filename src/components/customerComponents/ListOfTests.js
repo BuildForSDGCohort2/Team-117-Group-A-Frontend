@@ -8,6 +8,19 @@ import './ListOfTests.css'
 const ListOfTests = () => {
     const [testList, setTestList] = useState([])
 
+    //Delete a test function
+    const deleteTest = async id => {
+        try {
+            const deleteTest = await fetch(`https://moboclinic.herokuapp.com/api/test/${id}`, {
+                method: 'DELETE',
+            })
+            setTestList(setTestList.filter(data => data.id !== id))
+            return deleteTest
+        } catch (err) {
+            console.error(err.message)
+        }
+    }
+
     const ListOfTestsa = async () => {
         try {
             const response = await fetch('http://moboclinic.herokuapp.com/api/tests')
@@ -48,7 +61,7 @@ const ListOfTests = () => {
                                         <EditListOfTests testList={testList[0]} />
                                     </td>
                                     <td>
-                                        <button>Delete</button>
+                                        <button onClick={() => deleteTest(data.id)}>Delete</button>
                                     </td>
                                 </tr>
                             ))}

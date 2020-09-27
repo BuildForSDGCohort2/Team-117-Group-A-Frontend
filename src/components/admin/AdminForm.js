@@ -8,8 +8,6 @@ const AdminForm = () => {
         <div className="container">
             <div className="d-flex flex-row">
                 <AddATestForm />
-                <p className="button">Update Request for test</p>
-                <p className="button">Delete Request for test</p>
             </div>
         </div>
     )
