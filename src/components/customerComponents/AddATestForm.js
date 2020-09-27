@@ -9,7 +9,7 @@ const AddATestForm = () => {
         e.preventDefault()
         try {
             const body = { testName, price, description }
-            const response = fetch('http://localhost:5000/todos', {
+            const response = fetch('', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(body),
@@ -83,7 +83,3 @@ const AddATestForm = () => {
 }
 
 export default AddATestForm
-
-/* 
-      
-    </div> */
