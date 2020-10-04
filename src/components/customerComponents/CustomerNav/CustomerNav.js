@@ -7,9 +7,9 @@ const CustomerNav = () => {
     return (
         <div className="sideNav">
             <div className="d-flex flex-column">
-                <Link to="/availableTestsCon">List of Tests</Link>
-                <Link to="/requestATestForm">Request A Tests</Link>
-                <Link to="/customerDashBoard">Back To Profile</Link>
+                <Link to="/ListOfTests">List of Tests</Link>
+                <Link to="/RequestATestPage">Request A Tests</Link>
+                <Link to="/customer-dashboard">Back To Profile</Link>
                 <Link to="/">Logout</Link>
             </div>
         </div>

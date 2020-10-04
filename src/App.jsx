@@ -6,8 +6,9 @@ import SignupPage from './pages/SignUpPage'
 import MedicalSignupPage from './pages/MedicalSignupPage'
 import TempHomePage from './pages/TempHomePage'
 import CustomerDashBoardPage from './pages/CustomerDashBoardPage'
-import AvailableTestsCon from './components/customerComponents/AvailableTestsCon'
-import RequestATestForm from './components/customerComponents/RequestATestForm'
+import RequestATestPage from './pages/RequestATestPage'
+import AminPage from './pages/AdminPage'
+import ListOfTests from './components/customerComponents/ListOfTests'
 
 import { getUserFromLocalStorage } from './utils'
 
@@ -22,26 +23,29 @@ function App() {
     return (
         <div className="App">
             <Switch>
-                <Route exact path={isAuth('/')}>
+                <Route exact path="/">
                     <TempHomePage />
                 </Route>
                 <Route path="/login">
                     <LogonPage />
                 </Route>
-                <Route path={isAuth('/sign-up')}>
+                <Route path="/sign-up">
                     <SignupPage />
                 </Route>
                 <Route path="/medical-signup">
                     <MedicalSignupPage />
                 </Route>
-                <Route path={isAuth('/customerDashBoard')}>
+                <Route path="/customer-dashboard">
                     <CustomerDashBoardPage />
                 </Route>
-                <Route path={isAuth('/availableTestsCon')}>
-                    <AvailableTestsCon />
+                <Route path="/RequestATestPage">
+                    <RequestATestPage />
                 </Route>
-                <Route path={isAuth('/requestATestForm')}>
-                    <RequestATestForm />
+                <Route path="/AminPage">
+                    <AminPage />
+                </Route>
+                <Route path="/ListOfTests">
+                    <ListOfTests />
                 </Route>
             </Switch>
         </div>

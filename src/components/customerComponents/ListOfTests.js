@@ -1,23 +1,75 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+
+import CustomerNav from './CustomerNav/CustomerNav'
+import NavBar from '../NavBar/NavBar'
+import EditListOfTests from './EditListOfTests'
 import './ListOfTests.css'
 
-const ListOfTests = props => {
-    const { testName, price, description, onchangedisplay, displaydescription, id } = props
-    // console.log("props", props)
+const ListOfTests = () => {
+    const [testList, setTestList] = useState([])
+
+    //Delete a test function
+    const deleteTest = async id => {
+        try {
+            const deleteTest = await fetch(`https://moboclinic.herokuapp.com/api/test/${id}`, {
+                method: 'DELETE',
+            })
+            setTestList(setTestList.filter(data => data.id !== id))
+            return deleteTest
+        } catch (err) {
+            console.error(err.message)
+        }
+    }
+
+    const ListOfTestsa = async () => {
+        try {
+            const response = await fetch('http://moboclinic.herokuapp.com/api/tests')
+            const jsonData = await response.json()
+            setTestList(jsonData.data)
+        } catch (err) {
+            console.error(err.message)
+        }
+    }
+
+    useEffect(() => {
+        ListOfTestsa()
+    }, [])
+
     return (
         <div className="container-*">
-            <div className="section">
-                <div className="d-flex justify-content-around">
-                    <p>{testName}</p>
-                    <p>Curency indicater: {price}</p>
+            <NavBar />
+            <CustomerNav />
+            <div>
+                <div className="moveRight">
+                    <table className="table mt-g text-center">
+                        <thead>
+                            <tr>
+                                <th>Test Name</th>
+                                <th>Price</th>
+                                <th>Description</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {testList.map(data => (
+                                <tr key={data.id}>
+                                    <td>{data.testName}</td>
+                                    <td>{data.price}</td>
+                                    <td>{data.description}</td>
+                                    <td>
+                                        <EditListOfTests testList={testList[0]} />
+                                    </td>
+                                    <td>
+                                        <button onClick={() => deleteTest(data.id)}>Delete</button>
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                    <hr />
                 </div>
             </div>
-            <div className="d-flex justify-content-center">
-                <p key={id} onClick={() => onchangedisplay(id)}>
-                    See more info{displaydescription ? description : null}
-                </p>
-            </div>
-            <hr />
         </div>
     )
 }

@@ -1,9 +1,12 @@
 import React from 'react'
 import CustomerNav from './CustomerNav/CustomerNav'
+import { getUserFromLocalStorage } from '../../utils'
 
 import './RequestATestForm.css'
 
-const RequestATestForm = () => {
+const RequestATestForm = ({ handlechange, onsubmitform, patientadress, testname }) => {
+    const currentUser = getUserFromLocalStorage()
+    console.log('user', currentUser)
     return (
         <div className="back">
             <CustomerNav />
@@ -20,25 +23,31 @@ const RequestATestForm = () => {
                                 id="test_name"
                                 className="form-control input-sm"
                                 placeholder="Name of the test"
+                                testname={testname}
+                                onChange={handlechange}
                             />
                             <input
                                 type="text"
                                 name="patient_adress"
                                 id="patient_adress"
                                 className="form-control input-sm"
-                                placeholder="Adress where test must be done"
+                                placeholder="Patients Adress"
+                                patientadress={patientadress}
+                                onChange={handlechange}
                             />
                         </form>
                     </div>
                 </div>
                 <div className="d-flex justify-content-center">
-                    <button className="button">Request the test</button>
+                    <button onClick={onsubmitform} className="button">
+                        Request the test
+                    </button>
                 </div>
                 <div className="d-flex justify-content-center">
                     <b>
                         <p className="pspace">Note:</p>
                     </b>
-                    <p className="pspace">You can only make one request one test at a time</p>
+                    <p className="pspace">You can only make one test request at a time</p>
                 </div>
             </div>
         </div>

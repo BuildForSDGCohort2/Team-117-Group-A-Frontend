@@ -24,7 +24,12 @@ const HeaderBar = () => {
                     </Link>
                 ) : null}
                 <Link to="/medical-signup">Medical Signup</Link>
-                {isAuth ? <Link to="/customerDashBoard">Customer Dashboard</Link> : null}
+                <Link to="/sign-up">Signup</Link>
+                <Link to="/customer-dashboard">Customer Dashboard</Link>
+                <Link to="/AminPage">Admin</Link>
+                <Link to="/" onClick={handleLogOut}>
+                    Logout
+                </Link>
             </Navbar>
         </div>
     )
