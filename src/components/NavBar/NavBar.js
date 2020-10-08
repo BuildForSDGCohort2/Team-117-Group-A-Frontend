@@ -26,6 +26,7 @@ const HeaderBar = () => {
                 <Link to="/medical-signup">Medical Signup</Link>
                 <Link to="/sign-up">Signup</Link>
                 <Link to="/customer-dashboard">Customer Dashboard</Link>
+                <Link to="/medical-dashboard">Medical Dashboard</Link>
                 <Link to="/AminPage">Admin</Link>
                 <Link to="/" onClick={handleLogOut}>
                     Logout

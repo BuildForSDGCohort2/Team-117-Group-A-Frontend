@@ -6,6 +6,7 @@ import SignupPage from './pages/SignUpPage'
 import MedicalSignupPage from './pages/MedicalSignupPage'
 import TempHomePage from './pages/TempHomePage'
 import CustomerDashBoardPage from './pages/CustomerDashBoardPage'
+import MedicalDashboardPage from './pages/MedicalDashboardPage'
 import RequestATestPage from './pages/RequestATestPage'
 import AminPage from './pages/AdminPage'
 import ListOfTests from './components/customerComponents/ListOfTests'
@@ -37,6 +38,9 @@ function App() {
                 </Route>
                 <Route path="/customer-dashboard">
                     <CustomerDashBoardPage />
+                </Route>
+                <Route path="/medical-dashboard">
+                    <MedicalDashboardPage />
                 </Route>
                 <Route path="/RequestATestPage">
                     <RequestATestPage />
