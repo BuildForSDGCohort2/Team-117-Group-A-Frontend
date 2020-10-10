@@ -1,4 +1,11 @@
 import React from 'react'
+import { Switch, Route } from 'react-router-dom'
+
+import AddAcceptedTestCon from './allTest/AddAcceptedTestForm'
+import GetAllAcceptedTestCon from './allTest/GetAllacceptedTestForm'
+import GetAcceptedTestByCompanyCon from './allTest/GetAcceptedTestByCompanyForm'
+import AddResultsCon from '../containers/allResultsCon/AddResultsCon'
+import GetAllResultsCon from '../containers/allResultsCon/GetAllResultsCon'
 
 import MedicalNavBar from './medicalNavBar/MedicalNavBar'
 import HeaderBar from '../NavBar/NavBar'
@@ -13,21 +20,27 @@ const MedicalDashboardForm = () => {
             <div>
                 <div className="container">
                     <div className="d-flex justify-content-center">
-                        <h3>Welcome to your profile Mr. Medical Practitioner</h3>
+                        <h3>Medical Practitioner Dash Board</h3>
                     </div>
-                    <div className="d-flex justify-content-center">
-                        <h4>Functions</h4>
-                    </div>
+                    <div className="d-flex justify-content-center"></div>
                     <div className="d-flex justify-content-around">
-                        <b>
-                            <p className="outcome">Button 1</p>
-                        </b>
-                        <b>
-                            <p className="outcome">Button 2</p>
-                        </b>
-                        <b>
-                            <p className="outcome">Button 3</p>
-                        </b>
+                        <Switch>
+                            <Route path="/medical-dashboard/addacceptedtestcon">
+                                <AddAcceptedTestCon />
+                            </Route>
+                            <Route path="/medical-dashboard/getallacceptedtestcon">
+                                <GetAllAcceptedTestCon />
+                            </Route>
+                            <Route path="/medical-dashboard/getacceptedtestbycompanycon">
+                                <GetAcceptedTestByCompanyCon />
+                            </Route>
+                            <Route path="/medical-dashboard/addresultscon">
+                                <AddResultsCon />
+                            </Route>
+                            <Route path="/medical-dashboard/getallresultscon">
+                                <GetAllResultsCon />
+                            </Route>
+                        </Switch>
                     </div>
                 </div>
             </div>

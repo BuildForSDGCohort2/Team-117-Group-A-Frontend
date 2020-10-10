@@ -1,15 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-// import './CustomerNav.css'
-
 const MedicalNavBar = () => {
     return (
         <div className="sideNav">
             <div className="d-flex flex-column">
-                <Link to="/">1</Link>
-                <Link to="/">2</Link>
-                <Link to="/">3</Link>
+                <Link to="/medical-dashboard/addacceptedtestcon">Add accepted test</Link>
+                <Link to="/medical-dashboard/getallacceptedtestcon">Get all accepted test</Link>
+                <Link to="/medical-dashboard/getacceptedtestbycompanycon">Get accepted test by company</Link>
+                <Link to="/medical-dashboard/addresultscon">Add results</Link>
+                <Link to="/medical-dashboard/getallresultscon">Get all results</Link>
             </div>
         </div>
     )

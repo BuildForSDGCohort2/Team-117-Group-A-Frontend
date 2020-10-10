@@ -1,3 +1,49 @@
+Medical api end point
+
+[01:00, 9/23/2020] Chris Coding: Accepted
+
+Add Accepted
+Post request to https://moboclinic.herokuapp.com/api/addAccepted
+{
+"requestId": 21,
+"acceptedCompaniesId": 1
+}
+
+Get all Accepted requests
+Get request to https://moboclinic.herokuapp.com/api/accepted
+
+Get Accepted requests for 1 company
+Get request to https://moboclinic.herokuapp.com/api/companyAccepted/1 where 1 is the company id
+
+Delete Accepted
+Delete request to https://moboclinic.herokuapp.com/api/accepted/21 where 21 is the id of the accepted to be deleted
+
+Add Result
+Post request to https://moboclinic.herokuapp.com/api/addResult
+{
+"requestId": "21",
+"testId": 31,
+"customerId": 31,
+"companiesId": 1,
+"result": "positive, you have malaria"
+}
+
+Get Results
+Get request to https://moboclinic.herokuapp.com/api/results
+
+Update Result
+Put request to https://moboclinic.herokuapp.com/api/result/1 where 1 is the id of the result to be updated
+{
+"requestId": "21",
+"testId": 31,
+"customerId": 31,
+"companiesId": 1,
+"result": "negative, you do not have malaria"
+}
+
+Delete Result
+Delete request to https://moboclinic.herokuapp.com/api/result/1 where 1 is the id of the result to be deleted
+
 All the api end point to update users info
 
 Add Test
