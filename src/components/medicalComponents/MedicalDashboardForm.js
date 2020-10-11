@@ -3,8 +3,8 @@ import { Switch, Route } from 'react-router-dom'
 
 import AllCustomerTestReqCon from '../containers/customerTestRequest/AllCustomerTestReqCon'
 import AddAcceptedTestCon from '../containers/allTestCon/AddAcceptedTestCon'
-import GetAllAcceptedTestCon from '../containers/allTestCon/GetAcceptedTestByCompanyCon'
-import GetAcceptedTestByCompanyCon from '../containers/allTestCon/GetAcceptedTestByCompanyCon'
+import GetAllAcceptedTestCon from '../containers/allTestCon/GetAllacceptedTestCon'
+// import GetAcceptedTestByCompanyCon from '../containers/allTestCon/GetAcceptedTestByCompanyCon'
 import AddResultsCon from '../containers/allResultsCon/AddResultsCon'
 import GetAllResultsCon from '../containers/allResultsCon/GetAllResultsCon'
 
@@ -35,9 +35,9 @@ const MedicalDashboardForm = () => {
                             <Route path="/medical-dashboard/getallacceptedtestcon">
                                 <GetAllAcceptedTestCon />
                             </Route>
-                            <Route path="/medical-dashboard/getacceptedtestbycompanycon">
+                            {/* <Route path="/medical-dashboard/getacceptedtestbycompanycon">
                                 <GetAcceptedTestByCompanyCon />
-                            </Route>
+                            </Route> */}
                             <Route path="/medical-dashboard/addresultscon">
                                 <AddResultsCon />
                             </Route>

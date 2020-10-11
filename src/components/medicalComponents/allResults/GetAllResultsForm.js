@@ -1,6 +1,6 @@
 import React from 'react'
 
-const GetAllResultsForm = () => {
+const GetAllResultsForm = ({ allresults, deleteResult }) => {
     return (
         <div className="container-*">
             <div>
@@ -21,19 +21,22 @@ const GetAllResultsForm = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr key="id">
-                                <th>requestId</th>
-                                <th>testId</th>
-                                <th>customerId</th>
-                                <th>companiesId</th>
-                                <th>result of the test</th>
-                                <td>
-                                    <button>Edit</button>
-                                </td>
-                                <td>
-                                    <button>Delete</button>
-                                </td>
-                            </tr>
+                            {allresults.map(data => (
+                                <tr key={data.id}>
+                                    <td> {data.requestId}</td>
+                                    <td>{data.testId}</td>
+                                    <td>{data.customerId}</td>
+                                    <td>{data.companiesId}</td>
+                                    <td>{data.result}</td>
+                                    <td>Edit</td>
+                                    {/* <td>
+                    <EditListOfTests testList={testList[0]} />
+                  </td> */}
+                                    <td>
+                                        <button onClick={() => deleteResult(data.id)}>Delete</button>
+                                    </td>
+                                </tr>
+                            ))}
                         </tbody>
                     </table>
                     <hr />
@@ -49,3 +52,4 @@ export default GetAllResultsForm
 // "customerId": 31,
 // "companiesId": 1,
 // "result": "positive, you have malaria"
+// requestid, testid, customerid, companiesid, result

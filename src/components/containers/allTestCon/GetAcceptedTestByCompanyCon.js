@@ -2,11 +2,11 @@ import React from 'react'
 
 import GetAcceptedTestByCompanyForm from '../../medicalComponents/allTest/GetAcceptedTestByCompanyForm'
 
-const AddAcceptedTestForm = () => {
+const AddAcceptedTestCon = () => {
     return (
         <div>
             <GetAcceptedTestByCompanyForm />
         </div>
     )
 }
-export default AddAcceptedTestForm
+export default AddAcceptedTestCon

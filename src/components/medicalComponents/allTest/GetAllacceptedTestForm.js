@@ -1,6 +1,35 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 const GetAllacceptedTestForm = () => {
+    const [testListAcc, setTestListAcc] = useState([])
+
+    //Delete a test function
+    const deleteTestAcc = async id => {
+        try {
+            const deleteTestAcc = await fetch(`https://moboclinic.herokuapp.com/api/accepted/${id}`, {
+                method: 'DELETE',
+            })
+            setTestListAcc(testListAcc.filter(data => data.id !== id))
+            return deleteTestAcc
+        } catch (err) {
+            console.error(err.message)
+        }
+    }
+
+    const ListOfTestAcc = async () => {
+        try {
+            const response = await fetch('https://moboclinic.herokuapp.com/api/accepted')
+            const jsonData = await response.json()
+            setTestListAcc(jsonData.data)
+        } catch (err) {
+            console.error(err.message)
+        }
+    }
+
+    useEffect(() => {
+        ListOfTestAcc()
+    }, [])
+
     return (
         <div className="container-*">
             <div>
@@ -13,21 +42,20 @@ const GetAllacceptedTestForm = () => {
                             <tr>
                                 <th>Request By</th>
                                 <th>Companies</th>
-                                <th>Edit</th>
                                 <th>Delete</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr key="id">
-                                <td>Request By Customer Name</td>
-                                <td>Companies Name</td>
-                                <td>
-                                    <button>Edit</button>
-                                </td>
-                                <td>
-                                    <button>Delete</button>
-                                </td>
-                            </tr>
+                            {testListAcc.map(data => (
+                                <tr key={data.id}>
+                                    <td>{data.id}</td>
+                                    <td>{data.requestId}</td>
+                                    <td>{data.acceptedCompaniesId}</td>
+                                    <td>
+                                        <button onClick={() => deleteTestAcc(data.id)}>Delete</button>
+                                    </td>
+                                </tr>
+                            ))}
                         </tbody>
                     </table>
                     <hr />

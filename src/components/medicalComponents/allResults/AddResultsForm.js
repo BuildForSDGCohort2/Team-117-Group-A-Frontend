@@ -1,10 +1,6 @@
 import React from 'react'
 
-import { getUserFromLocalStorage } from '../../../utils'
-
-const AddResultsForm = () => {
-    const currentUser = getUserFromLocalStorage()
-    console.log('user', currentUser)
+const AddResultsForm = ({ requestid, testid, customerid, companiesid, result, handlechange, onsubmitform }) => {
     return (
         <div className="back">
             <div className="container-*">
@@ -20,8 +16,8 @@ const AddResultsForm = () => {
                                 id="requestId"
                                 className="form-control input-sm"
                                 placeholder="Requester's Id"
-                                // testname={testname}
-                                // onChange={handlechange}
+                                requestid={requestid}
+                                onChange={handlechange}
                             />
                             <input
                                 type="text"
@@ -29,8 +25,8 @@ const AddResultsForm = () => {
                                 id="testId"
                                 className="form-control input-sm"
                                 placeholder="Test Id"
-                                // testname={testname}
-                                // onChange={handlechange}
+                                testid={testid}
+                                onChange={handlechange}
                             />
                             <input
                                 type="text"
@@ -38,8 +34,8 @@ const AddResultsForm = () => {
                                 id="customerId"
                                 className="form-control input-sm"
                                 placeholder="Customer Id"
-                                // testname={testname}
-                                // onChange={handlechange}
+                                customerid={customerid}
+                                onChange={handlechange}
                             />
                             <input
                                 type="text"
@@ -47,8 +43,8 @@ const AddResultsForm = () => {
                                 id="companiesId"
                                 className="form-control input-sm"
                                 placeholder="Companies Id"
-                                // testname={testname}
-                                // onChange={handlechange}
+                                companiesid={companiesid}
+                                onChange={handlechange}
                             />
                             <input
                                 type="text"
@@ -56,14 +52,14 @@ const AddResultsForm = () => {
                                 id="result"
                                 className="form-control input-sm"
                                 placeholder="Result"
-                                // testname={testname}
-                                // onChange={handlechange}
+                                result={result}
+                                onChange={handlechange}
                             />
                         </form>
                     </div>
                 </div>
                 <div className="d-flex justify-content-center">
-                    <button className="button">Add a Result</button>
+                    <input type="submit" value="Request" className="btn-block button" onClick={onsubmitform} />
                 </div>
                 <div className="d-flex justify-content-center">
                     <b>
@@ -76,13 +72,3 @@ const AddResultsForm = () => {
     )
 }
 export default AddResultsForm
-
-// Add Result
-// Post request to https://moboclinic.herokuapp.com/api/addResult
-// {
-// "requestId": "21",
-// "testId": 31,
-// "customerId": 31,
-// "companiesId": 1,
-// "result": "positive, you have malaria"
-// }

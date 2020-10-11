@@ -1,11 +1,11 @@
 import React from 'react'
-import GetAllacceptedTestForm from '../../medicalComponents/allTest/GetAcceptedTestByCompanyForm'
+import GetAllacceptedTestForm from '../../medicalComponents/allTest/GetAllacceptedTestForm'
 
-const AddAcceptedTestForm = () => {
+const GetAllacceptedTestCon = () => {
     return (
         <div>
             <GetAllacceptedTestForm />
         </div>
     )
 }
-export default AddAcceptedTestForm
+export default GetAllacceptedTestCon
