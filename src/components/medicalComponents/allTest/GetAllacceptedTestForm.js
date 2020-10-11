@@ -49,7 +49,6 @@ const GetAllacceptedTestForm = () => {
                             {testListAcc.map(data => (
                                 <tr key={data.id}>
                                     <td>{data.id}</td>
-                                    <td>{data.requestId}</td>
                                     <td>{data.acceptedCompaniesId}</td>
                                     <td>
                                         <button onClick={() => deleteTestAcc(data.id)}>Delete</button>
@@ -65,6 +64,3 @@ const GetAllacceptedTestForm = () => {
     )
 }
 export default GetAllacceptedTestForm
-
-// "requestId": 21,
-// "acceptedCompaniesId": 1

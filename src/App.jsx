@@ -11,16 +11,11 @@ import RequestATestPage from './pages/RequestATestPage'
 import AminPage from './pages/AdminPage'
 import ListOfTests from './components/customerComponents/ListOfTests'
 
-import { getUserFromLocalStorage } from './utils'
-
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './assets/css/global.css'
 import './App.css'
 
 function App() {
-    const isAuth = path => {
-        return getUserFromLocalStorage() ? path : '/'
-    }
     return (
         <div className="App">
             <Switch>

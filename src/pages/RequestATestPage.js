@@ -26,7 +26,7 @@ const RequestATestPage = () => {
         e.preventDefault()
         try {
             const body = { customerId, testId, address }
-            await fetch('https://moboclinic.herokuapp.com/api/requests', {
+            await fetch('https://moboclinic.herokuapp.com/api/addRequest', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(body),
@@ -58,7 +58,7 @@ export default RequestATestPage
 // Post request to https://moboclinic.herokuapp.com/api/addRequest
 
 // {
-//   "testId": 31,
-//   "customerId": 31,
-//   "address": "55 Avenue"
+// "testId": 31,
+// "customerId": 31,
+// "address": "55 Avenue"
 // }

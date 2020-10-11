@@ -45,7 +45,7 @@ const RequestATestForm = ({ handlechange, onsubmitform, address, testid, userid,
                     </div>
                 </div>
                 <div className="d-flex justify-content-center">
-                    <input type="submit" value="Request" className="btn-block button" onClick={onsubmitform} />
+                    <input type="submit" value="Request" className="btn-block button" onClick={e => onsubmitform(e)} />
                 </div>
                 <div className="d-flex justify-content-center">
                     <b>
