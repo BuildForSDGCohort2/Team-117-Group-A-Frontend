@@ -1,47 +1,51 @@
 import React from 'react'
 import CustomerNav from './CustomerNav/CustomerNav'
-import { getUserFromLocalStorage } from '../../utils'
 
 import './RequestATestForm.css'
 
-const RequestATestForm = ({ handlechange, onsubmitform, patientadress, testname }) => {
-    const currentUser = getUserFromLocalStorage()
-    console.log('user', currentUser)
+const RequestATestForm = ({ handlechange, onsubmitform, address, testid, userid, customerid }) => {
     return (
         <div className="back">
             <CustomerNav />
             <div className="container-*">
                 <div className="d-flex justify-content-center">
-                    <h1>Request Form</h1>
+                    <h1>Request A Test</h1>
                 </div>
                 <div className="d-flex justify-content-around">
                     <div className="row">
                         <form>
                             <input
                                 type="text"
-                                name="test_name"
-                                id="test_name"
+                                name="customerId"
+                                id="customerId"
                                 className="form-control input-sm"
-                                placeholder="Name of the test"
-                                testname={testname}
+                                placeholder={`Type only this number ${userid}`}
+                                customerid={customerid}
                                 onChange={handlechange}
                             />
                             <input
                                 type="text"
-                                name="patient_adress"
-                                id="patient_adress"
+                                name="testId"
+                                id="testId"
                                 className="form-control input-sm"
-                                placeholder="Patients Adress"
-                                patientadress={patientadress}
+                                placeholder="Number of the test"
+                                testid={testid}
+                                onChange={handlechange}
+                            />
+                            <input
+                                type="text"
+                                name="address"
+                                id="address"
+                                className="form-control input-sm"
+                                placeholder="Your Adress"
+                                address={address}
                                 onChange={handlechange}
                             />
                         </form>
                     </div>
                 </div>
                 <div className="d-flex justify-content-center">
-                    <button onClick={onsubmitform} className="button">
-                        Request the test
-                    </button>
+                    <input type="submit" value="Request" className="btn-block button" onClick={onsubmitform} />
                 </div>
                 <div className="d-flex justify-content-center">
                     <b>
@@ -55,3 +59,12 @@ const RequestATestForm = ({ handlechange, onsubmitform, patientadress, testname 
 }
 
 export default RequestATestForm
+
+// Add Request
+// Post request to https://moboclinic.herokuapp.com/api/addRequest
+
+// {
+//   "testId": 31,
+//   "customerId": 31,
+//   "address": "55 Avenue"
+// }

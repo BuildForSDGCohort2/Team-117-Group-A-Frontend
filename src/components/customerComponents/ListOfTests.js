@@ -14,7 +14,7 @@ const ListOfTests = () => {
             const deleteTest = await fetch(`https://moboclinic.herokuapp.com/api/test/${id}`, {
                 method: 'DELETE',
             })
-            setTestList(setTestList.filter(data => data.id !== id))
+            setTestList(testList.filter(data => data.id !== id))
             return deleteTest
         } catch (err) {
             console.error(err.message)
@@ -44,6 +44,11 @@ const ListOfTests = () => {
                     <table className="table mt-g text-center">
                         <thead>
                             <tr>
+                                <th>
+                                    Test
+                                    <br />
+                                    Number
+                                </th>
                                 <th>Test Name</th>
                                 <th>Price</th>
                                 <th>Description</th>
@@ -54,6 +59,7 @@ const ListOfTests = () => {
                         <tbody>
                             {testList.map(data => (
                                 <tr key={data.id}>
+                                    <td>{data.id}</td>
                                     <td>{data.testName}</td>
                                     <td>{data.price}</td>
                                     <td>{data.description}</td>

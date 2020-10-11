@@ -5,6 +5,7 @@ const MedicalNavBar = () => {
     return (
         <div className="sideNav">
             <div className="d-flex flex-column">
+                <Link to="/medical-dashboard/allcustomertestreqcon">All test requests</Link>
                 <Link to="/medical-dashboard/addacceptedtestcon">Add accepted test</Link>
                 <Link to="/medical-dashboard/getallacceptedtestcon">Get all accepted test</Link>
                 <Link to="/medical-dashboard/getacceptedtestbycompanycon">Get accepted test by company</Link>

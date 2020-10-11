@@ -12,7 +12,7 @@ const MedicalSignupForm = ({
 }) => {
     return (
         <div className=" body">
-            <h3>Register as a MoboClinic user</h3>
+            <h3>Register as a MoboClinic Regestered Company</h3>
             <form>
                 <input
                     type="text"

@@ -7,6 +7,9 @@ import { getUserFromLocalStorage } from '../utils/index'
 const RequestATestPage = () => {
     // Form state
     const [formState, setFormState] = useState({})
+    const userId = getUserFromLocalStorage().id
+
+    const { testId, customerId, address } = formState
 
     //handel change of input for the form
     const handleChange = event => {
@@ -16,19 +19,19 @@ const RequestATestPage = () => {
             [name]: value,
         })
     }
-    const testId = getUserFromLocalStorage().id
-    const { test_name, patient_adress } = formState
+    console.log('formState', formState)
+    console.log('userId', userId)
 
     const onSubmitForm = async e => {
         e.preventDefault()
         try {
-            const body = { testId, test_name, patient_adress }
-            await fetch('https://moboclinic.herokuapp.com/api/addRequest', {
+            const body = { customerId, testId, address }
+            await fetch('https://moboclinic.herokuapp.com/api/requests', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(body),
             })
-            window.location = '/'
+            window.location = '/RequestATestPage'
         } catch (err) {
             console.error(err.message)
         }
@@ -40,11 +43,22 @@ const RequestATestPage = () => {
             <RequestATestForm
                 handlechange={handleChange}
                 onsubmitform={onSubmitForm}
-                patientadress={patient_adress}
-                testname={test_name}
+                address={address}
+                testid={testId}
+                userid={userId}
+                customerid={customerId}
             />
         </div>
     )
 }
 
 export default RequestATestPage
+
+// Add Request
+// Post request to https://moboclinic.herokuapp.com/api/addRequest
+
+// {
+//   "testId": 31,
+//   "customerId": 31,
+//   "address": "55 Avenue"
+// }

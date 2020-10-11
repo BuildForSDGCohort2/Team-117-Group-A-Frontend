@@ -1,9 +1,10 @@
 import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 
-import AddAcceptedTestCon from './allTest/AddAcceptedTestForm'
-import GetAllAcceptedTestCon from './allTest/GetAllacceptedTestForm'
-import GetAcceptedTestByCompanyCon from './allTest/GetAcceptedTestByCompanyForm'
+import AllCustomerTestReqCon from '../containers/customerTestRequest/AllCustomerTestReqCon'
+import AddAcceptedTestCon from '../containers/allTestCon/AddAcceptedTestCon'
+import GetAllAcceptedTestCon from '../containers/allTestCon/GetAcceptedTestByCompanyCon'
+import GetAcceptedTestByCompanyCon from '../containers/allTestCon/GetAcceptedTestByCompanyCon'
 import AddResultsCon from '../containers/allResultsCon/AddResultsCon'
 import GetAllResultsCon from '../containers/allResultsCon/GetAllResultsCon'
 
@@ -25,6 +26,9 @@ const MedicalDashboardForm = () => {
                     <div className="d-flex justify-content-center"></div>
                     <div className="d-flex justify-content-around">
                         <Switch>
+                            <Route path="/medical-dashboard/allcustomertestreqcon">
+                                <AllCustomerTestReqCon />
+                            </Route>
                             <Route path="/medical-dashboard/addacceptedtestcon">
                                 <AddAcceptedTestCon />
                             </Route>

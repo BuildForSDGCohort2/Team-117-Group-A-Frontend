@@ -18,7 +18,7 @@ const SignupForm = ({
             <HeaderBar />
             <div className="signup-page">
                 <div className="body">
-                    <h3>Register as a MoboClinic user</h3>
+                    <h3>Register as a MoboClinic Patient</h3>
                     <form>
                         <input
                             type="text"
