@@ -11,18 +11,16 @@ const GetAllacceptedTestForm = () => {
                     <table className="table mt-g text-center">
                         <thead>
                             <tr>
-                                <th>Test Name</th>
-                                <th>Price</th>
-                                <th>Description</th>
+                                <th>Request By</th>
+                                <th>Companies</th>
                                 <th>Edit</th>
                                 <th>Delete</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr key="id">
-                                <td>test 1</td>
-                                <td>test 2</td>
-                                <td>test 3</td>
+                                <td>Request By Customer Name</td>
+                                <td>Companies Name</td>
                                 <td>
                                     <button>Edit</button>
                                 </td>
@@ -39,3 +37,6 @@ const GetAllacceptedTestForm = () => {
     )
 }
 export default GetAllacceptedTestForm
+
+// "requestId": 21,
+// "acceptedCompaniesId": 1

@@ -1,58 +1,88 @@
 import React from 'react'
 
+import { getUserFromLocalStorage } from '../../../utils'
+
 const AddResultsForm = () => {
+    const currentUser = getUserFromLocalStorage()
+    console.log('user', currentUser)
     return (
-        <div>
-            <div className="container">
-                <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                    Add A Results For A Patient
-                </button>
-
-                <div className="modal" id="myModal">
-                    <div className="modal-dialog">
-                        <div className="modal-content">
-                            {/* <!-- Modal Header --> */}
-                            <div className="modal-header">
-                                <h4 className="modal-title">Add a new result</h4>
-                                <button type="button" className="close" data-dismiss="modal">
-                                    &times;
-                                </button>
-                            </div>
-
-                            <div className="modal-body">
-                                <form>
-                                    <p>Test name</p>
-                                    <input
-                                        type="text"
-                                        className="form-control"
-                                        // value={testName}
-                                        // onChange={e => setTestName(e.target.value)}
-                                    />
-                                    <p>Price</p>
-                                    <input
-                                        type="text"
-                                        className="form-control"
-                                        // value={price}
-                                        // onChange={e => setPrice(e.target.value)}
-                                    />
-                                    <p>Description</p>
-                                    <input
-                                        type="text"
-                                        className="form-control"
-                                        // value={description}
-                                        // onChange={e => setDescription(e.target.value)}
-                                    />
-                                    <button className="btn btn-success">Add</button>
-                                    <button type="button" className="btn btn-danger" data-dismiss="modal">
-                                        Close
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
+        <div className="back">
+            <div className="container-*">
+                <div className="d-flex justify-content-center">
+                    <h1>Add A Result</h1>
+                </div>
+                <div className="d-flex justify-content-around">
+                    <div className="row">
+                        <form>
+                            <input
+                                type="text"
+                                name="requestId"
+                                id="requestId"
+                                className="form-control input-sm"
+                                placeholder="Requester's Id"
+                                // testname={testname}
+                                // onChange={handlechange}
+                            />
+                            <input
+                                type="text"
+                                name="testId"
+                                id="testId"
+                                className="form-control input-sm"
+                                placeholder="Test Id"
+                                // testname={testname}
+                                // onChange={handlechange}
+                            />
+                            <input
+                                type="text"
+                                name="customerId"
+                                id="customerId"
+                                className="form-control input-sm"
+                                placeholder="Customer Id"
+                                // testname={testname}
+                                // onChange={handlechange}
+                            />
+                            <input
+                                type="text"
+                                name="companiesId"
+                                id="companiesId"
+                                className="form-control input-sm"
+                                placeholder="Companies Id"
+                                // testname={testname}
+                                // onChange={handlechange}
+                            />
+                            <input
+                                type="text"
+                                name="result"
+                                id="result"
+                                className="form-control input-sm"
+                                placeholder="Result"
+                                // testname={testname}
+                                // onChange={handlechange}
+                            />
+                        </form>
                     </div>
+                </div>
+                <div className="d-flex justify-content-center">
+                    <button className="button">Add a Result</button>
+                </div>
+                <div className="d-flex justify-content-center">
+                    <b>
+                        <p className="pspace">Note:</p>
+                    </b>
+                    <p className="pspace">You can only add one result at a time</p>
                 </div>
             </div>
         </div>
     )
 }
 export default AddResultsForm
+
+// Add Result
+// Post request to https://moboclinic.herokuapp.com/api/addResult
+// {
+// "requestId": "21",
+// "testId": 31,
+// "customerId": 31,
+// "companiesId": 1,
+// "result": "positive, you have malaria"
+// }

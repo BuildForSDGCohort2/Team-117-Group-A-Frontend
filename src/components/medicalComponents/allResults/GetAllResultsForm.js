@@ -11,18 +11,22 @@ const GetAllResultsForm = () => {
                     <table className="table mt-g text-center">
                         <thead>
                             <tr>
-                                <th>Test Name</th>
-                                <th>Price</th>
-                                <th>Description</th>
+                                <th>Request</th>
+                                <th>Test</th>
+                                <th>Customer</th>
+                                <th>Companies</th>
+                                <th>Result</th>
                                 <th>Edit</th>
                                 <th>Delete</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr key="id">
-                                <td>test 1</td>
-                                <td>test 2</td>
-                                <td>test 3</td>
+                                <th>requestId</th>
+                                <th>testId</th>
+                                <th>customerId</th>
+                                <th>companiesId</th>
+                                <th>result of the test</th>
                                 <td>
                                     <button>Edit</button>
                                 </td>
@@ -39,3 +43,9 @@ const GetAllResultsForm = () => {
     )
 }
 export default GetAllResultsForm
+
+// "requestId": "21",
+// "testId": 31,
+// "customerId": 31,
+// "companiesId": 1,
+// "result": "positive, you have malaria"

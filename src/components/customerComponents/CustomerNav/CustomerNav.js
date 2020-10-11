@@ -10,7 +10,6 @@ const CustomerNav = () => {
                 <Link to="/ListOfTests">List of Tests</Link>
                 <Link to="/RequestATestPage">Request A Tests</Link>
                 <Link to="/customer-dashboard">Back To Profile</Link>
-                <Link to="/">Logout</Link>
             </div>
         </div>
     )

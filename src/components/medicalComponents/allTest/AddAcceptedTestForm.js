@@ -1,58 +1,58 @@
 import React from 'react'
 
+import { getUserFromLocalStorage } from '../../../utils'
+
 const AddAcceptedTestForm = () => {
+    const currentUser = getUserFromLocalStorage()
+    console.log('user', currentUser)
     return (
-        <div>
-            <div className="container">
-                <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                    Add Accepted Test Request
-                </button>
-
-                <div className="modal" id="myModal">
-                    <div className="modal-dialog">
-                        <div className="modal-content">
-                            {/* <!-- Modal Header --> */}
-                            <div className="modal-header">
-                                <h4 className="modal-title">Add a new test</h4>
-                                <button type="button" className="close" data-dismiss="modal">
-                                    &times;
-                                </button>
-                            </div>
-
-                            <div className="modal-body">
-                                <form>
-                                    <p>Test name</p>
-                                    <input
-                                        type="text"
-                                        className="form-control"
-                                        // value={testName}
-                                        // onChange={e => setTestName(e.target.value)}
-                                    />
-                                    <p>Price</p>
-                                    <input
-                                        type="text"
-                                        className="form-control"
-                                        // value={price}
-                                        // onChange={e => setPrice(e.target.value)}
-                                    />
-                                    <p>Description</p>
-                                    <input
-                                        type="text"
-                                        className="form-control"
-                                        // value={description}
-                                        // onChange={e => setDescription(e.target.value)}
-                                    />
-                                    <button className="btn btn-success">Add</button>
-                                    <button type="button" className="btn btn-danger" data-dismiss="modal">
-                                        Close
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
+        <div className="back">
+            <div className="container-*">
+                <div className="d-flex justify-content-center">
+                    <h1>Add Accepted Test</h1>
+                </div>
+                <div className="d-flex justify-content-around">
+                    <div className="row">
+                        <form>
+                            <input
+                                type="requestId"
+                                name="requestId"
+                                id="requestId"
+                                className="form-control input-sm"
+                                placeholder="Request Id"
+                                // testname={testname}
+                                // onChange={handlechange}
+                            />
+                            <input
+                                type="text"
+                                name="acceptedCompaniesId"
+                                id="acceptedCompaniesId"
+                                className="form-control input-sm"
+                                placeholder="Companies Id"
+                                // patientadress={patientadress}
+                                // onChange={handlechange}
+                            />
+                        </form>
                     </div>
+                </div>
+                <div className="d-flex justify-content-center">
+                    <button className="button">Add a Test</button>
+                </div>
+                <div className="d-flex justify-content-center">
+                    <b>
+                        <p className="pspace">Note:</p>
+                    </b>
+                    <p className="pspace">You can only add one result at a time</p>
                 </div>
             </div>
         </div>
     )
 }
 export default AddAcceptedTestForm
+
+// Add Accepted
+// Post request to https://moboclinic.herokuapp.com/api/addAccepted
+// {
+//   "requestId": 21,
+//   "acceptedCompaniesId": 1
+// }

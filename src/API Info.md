@@ -92,3 +92,18 @@ Put request to https://moboclinic.herokuapp.com/api/request/11 where 11 is the i
 
 Delete Request for test
 Delete request to https://moboclinic.herokuapp.com/api/request/11 where 11 is the id of the request to be deleted -->
+
+Info needed
+
+userInfo to return on logon
+{
+"email": "21",
+"first name": 31,
+"last name": 31,
+"phone number": "0123456987"
+"requested tests": {
+"testId": "1",
+"testName": "NameOfTest"
+"adress": "some adress"
+}
+}
